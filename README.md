@@ -1,6 +1,6 @@
 # ProjectWork-SecondoAnno
 
-
+![](https://github.com/colinalessia/ProjectWork-SecondoAnno/blob/main/img/logo_small.png)
 
 # Indice
 
