@@ -1,5 +1,6 @@
 # ProjectWork-SecondoAnno
-</br>
+
+
 
 # Indice
 
@@ -18,6 +19,11 @@ Membri del gruppo:
 - Colin Alessia
 - Marchetto Alvise
 - Pellegrinon Nicola
+
+<p>
+    <b>Rappresentante gruppo: </b>
+    Canton Lorenzo
+</p>
 
 </br>
 
