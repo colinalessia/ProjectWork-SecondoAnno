@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Luca\\Documents\\GitHub\\ProjectWork-SecondoAnno\\ITS.Allan.ProjectWork\\ITS.Allan.ProjectWork.Models\\ITS.Allan.ProjectWork.Models.csproj": {}
+    "C:\\Users\\Nicola\\Documents\\IIOT-STAGE-2021\\ProjectWork-SecondoAnno\\ITS.Allan.ProjectWork\\ITS.Allan.ProjectWork.Models\\ITS.Allan.ProjectWork.Models.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Luca\\Documents\\GitHub\\ProjectWork-SecondoAnno\\ITS.Allan.ProjectWork\\ITS.Allan.ProjectWork.Models\\ITS.Allan.ProjectWork.Models.csproj": {
+    "C:\\Users\\Nicola\\Documents\\IIOT-STAGE-2021\\ProjectWork-SecondoAnno\\ITS.Allan.ProjectWork\\ITS.Allan.ProjectWork.Models\\ITS.Allan.ProjectWork.Models.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Luca\\Documents\\GitHub\\ProjectWork-SecondoAnno\\ITS.Allan.ProjectWork\\ITS.Allan.ProjectWork.Models\\ITS.Allan.ProjectWork.Models.csproj",
+        "projectUniqueName": "C:\\Users\\Nicola\\Documents\\IIOT-STAGE-2021\\ProjectWork-SecondoAnno\\ITS.Allan.ProjectWork\\ITS.Allan.ProjectWork.Models\\ITS.Allan.ProjectWork.Models.csproj",
         "projectName": "ITS.Allan.ProjectWork.Models",
-        "projectPath": "C:\\Users\\Luca\\Documents\\GitHub\\ProjectWork-SecondoAnno\\ITS.Allan.ProjectWork\\ITS.Allan.ProjectWork.Models\\ITS.Allan.ProjectWork.Models.csproj",
-        "packagesPath": "C:\\Users\\Luca\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Luca\\Documents\\GitHub\\ProjectWork-SecondoAnno\\ITS.Allan.ProjectWork\\ITS.Allan.ProjectWork.Models\\obj\\",
+        "projectPath": "C:\\Users\\Nicola\\Documents\\IIOT-STAGE-2021\\ProjectWork-SecondoAnno\\ITS.Allan.ProjectWork\\ITS.Allan.ProjectWork.Models\\ITS.Allan.ProjectWork.Models.csproj",
+        "packagesPath": "C:\\Users\\Nicola\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Nicola\\Documents\\IIOT-STAGE-2021\\ProjectWork-SecondoAnno\\ITS.Allan.ProjectWork\\ITS.Allan.ProjectWork.Models\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Luca\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Nicola\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -60,7 +64,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.203\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     }

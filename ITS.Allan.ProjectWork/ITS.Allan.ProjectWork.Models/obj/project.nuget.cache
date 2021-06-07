@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "0SJlbIC5lsROvskphnpaWqXCwI14ux3vzWyDwaYN4pZoPeq6ZbzusCvU2060mfVpy0paTeeKKNFX6EVzL0aeyQ==",
+  "dgSpecHash": "DOQkV7GvM1KucqztM4cOrFJVO0zzMnqyOQYeoGltPZwrcm07I/SBgitVLv+osIG+KF66rcUMHX9FRvAQyT/hlA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Luca\\Documents\\GitHub\\ProjectWork-SecondoAnno\\ITS.Allan.ProjectWork\\ITS.Allan.ProjectWork.Models\\ITS.Allan.ProjectWork.Models.csproj",
+  "projectFilePath": "C:\\Users\\Nicola\\Documents\\IIOT-STAGE-2021\\ProjectWork-SecondoAnno\\ITS.Allan.ProjectWork\\ITS.Allan.ProjectWork.Models\\ITS.Allan.ProjectWork.Models.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Luca\\.nuget\\packages\\system.componentmodel.annotations\\5.0.0\\system.componentmodel.annotations.5.0.0.nupkg.sha512"
+    "C:\\Users\\Nicola\\.nuget\\packages\\system.componentmodel.annotations\\5.0.0\\system.componentmodel.annotations.5.0.0.nupkg.sha512"
   ],
   "logs": []
 }
