@@ -4,15 +4,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ITS.Allan.ProjectWork.Models
 {
     public class Course
     {
-        [Required(ErrorMessage = "Course's id cannot be null")]
+        [Key]
         public int IdCourse { get; set; }
 
-        [Required(ErrorMessage = "Campus's id cannot be null")]
+        [ForeignKey("Campus")]
         public int IdCampus { get; set; }
 
         [Required(ErrorMessage = "Course's name cannot be null")]
