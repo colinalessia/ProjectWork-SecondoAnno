@@ -30,7 +30,7 @@ Membri del gruppo:
 
 # ER diagram
 
-![]()
+![](https://github.com/colinalessia/ProjectWork-SecondoAnno/blob/main/img/database_ER_diagram.PNG)
 
 </br>
 
