@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Luca\\Documents\\GitHub\\ProjectWork-SecondoAnno\\ITS.Allan.ProjectWork\\ITS.Allan.ProjectWork.Models\\ITS.Allan.ProjectWork.Models.csproj": {}
+    "C:\\Users\\aless\\Desktop\\Projectwork\\ProjectWork-SecondoAnno\\ITS.Allan.ProjectWork\\ITS.Allan.ProjectWork.Models\\ITS.Allan.ProjectWork.Models.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Luca\\Documents\\GitHub\\ProjectWork-SecondoAnno\\ITS.Allan.ProjectWork\\ITS.Allan.ProjectWork.Models\\ITS.Allan.ProjectWork.Models.csproj": {
+    "C:\\Users\\aless\\Desktop\\Projectwork\\ProjectWork-SecondoAnno\\ITS.Allan.ProjectWork\\ITS.Allan.ProjectWork.Models\\ITS.Allan.ProjectWork.Models.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Luca\\Documents\\GitHub\\ProjectWork-SecondoAnno\\ITS.Allan.ProjectWork\\ITS.Allan.ProjectWork.Models\\ITS.Allan.ProjectWork.Models.csproj",
+        "projectUniqueName": "C:\\Users\\aless\\Desktop\\Projectwork\\ProjectWork-SecondoAnno\\ITS.Allan.ProjectWork\\ITS.Allan.ProjectWork.Models\\ITS.Allan.ProjectWork.Models.csproj",
         "projectName": "ITS.Allan.ProjectWork.Models",
-        "projectPath": "C:\\Users\\Luca\\Documents\\GitHub\\ProjectWork-SecondoAnno\\ITS.Allan.ProjectWork\\ITS.Allan.ProjectWork.Models\\ITS.Allan.ProjectWork.Models.csproj",
-        "packagesPath": "C:\\Users\\Luca\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Luca\\Documents\\GitHub\\ProjectWork-SecondoAnno\\ITS.Allan.ProjectWork\\ITS.Allan.ProjectWork.Models\\obj\\",
+        "projectPath": "C:\\Users\\aless\\Desktop\\Projectwork\\ProjectWork-SecondoAnno\\ITS.Allan.ProjectWork\\ITS.Allan.ProjectWork.Models\\ITS.Allan.ProjectWork.Models.csproj",
+        "packagesPath": "C:\\Users\\aless\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\aless\\Desktop\\Projectwork\\ProjectWork-SecondoAnno\\ITS.Allan.ProjectWork\\ITS.Allan.ProjectWork.Models\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Luca\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\aless\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
