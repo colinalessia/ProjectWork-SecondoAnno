@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\aless\\Desktop\\Projectwork\\ProjectWork-SecondoAnno\\ITS.Allan.ProjectWork\\ITS.Allan.ProjectWork.Data\\ITS.Allan.ProjectWork.Data.csproj": {}
+    "C:\\Users\\Luca\\Documents\\GitHub\\ProjectWork-SecondoAnno\\ITS.Allan.ProjectWork\\ITS.Allan.ProjectWork.Data\\ITS.Allan.ProjectWork.Data.csproj": {}
   },
   "projects": {
-    "C:\\Users\\aless\\Desktop\\Projectwork\\ProjectWork-SecondoAnno\\ITS.Allan.ProjectWork\\ITS.Allan.ProjectWork.Data\\ITS.Allan.ProjectWork.Data.csproj": {
+    "C:\\Users\\Luca\\Documents\\GitHub\\ProjectWork-SecondoAnno\\ITS.Allan.ProjectWork\\ITS.Allan.ProjectWork.Data\\ITS.Allan.ProjectWork.Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\aless\\Desktop\\Projectwork\\ProjectWork-SecondoAnno\\ITS.Allan.ProjectWork\\ITS.Allan.ProjectWork.Data\\ITS.Allan.ProjectWork.Data.csproj",
+        "projectUniqueName": "C:\\Users\\Luca\\Documents\\GitHub\\ProjectWork-SecondoAnno\\ITS.Allan.ProjectWork\\ITS.Allan.ProjectWork.Data\\ITS.Allan.ProjectWork.Data.csproj",
         "projectName": "ITS.Allan.ProjectWork.Data",
-        "projectPath": "C:\\Users\\aless\\Desktop\\Projectwork\\ProjectWork-SecondoAnno\\ITS.Allan.ProjectWork\\ITS.Allan.ProjectWork.Data\\ITS.Allan.ProjectWork.Data.csproj",
-        "packagesPath": "C:\\Users\\aless\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\aless\\Desktop\\Projectwork\\ProjectWork-SecondoAnno\\ITS.Allan.ProjectWork\\ITS.Allan.ProjectWork.Data\\obj\\",
+        "projectPath": "C:\\Users\\Luca\\Documents\\GitHub\\ProjectWork-SecondoAnno\\ITS.Allan.ProjectWork\\ITS.Allan.ProjectWork.Data\\ITS.Allan.ProjectWork.Data.csproj",
+        "packagesPath": "C:\\Users\\Luca\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Luca\\Documents\\GitHub\\ProjectWork-SecondoAnno\\ITS.Allan.ProjectWork\\ITS.Allan.ProjectWork.Data\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\aless\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Luca\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -28,8 +28,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\aless\\Desktop\\Projectwork\\ProjectWork-SecondoAnno\\ITS.Allan.ProjectWork\\ITS.Allan.ProjectWork.Models\\ITS.Allan.ProjectWork.Models.csproj": {
-                "projectPath": "C:\\Users\\aless\\Desktop\\Projectwork\\ProjectWork-SecondoAnno\\ITS.Allan.ProjectWork\\ITS.Allan.ProjectWork.Models\\ITS.Allan.ProjectWork.Models.csproj"
+              "C:\\Users\\Luca\\Documents\\GitHub\\ProjectWork-SecondoAnno\\ITS.Allan.ProjectWork\\ITS.Allan.ProjectWork.Models\\ITS.Allan.ProjectWork.Models.csproj": {
+                "projectPath": "C:\\Users\\Luca\\Documents\\GitHub\\ProjectWork-SecondoAnno\\ITS.Allan.ProjectWork\\ITS.Allan.ProjectWork.Models\\ITS.Allan.ProjectWork.Models.csproj"
               }
             }
           }
@@ -68,17 +68,17 @@
         }
       }
     },
-    "C:\\Users\\aless\\Desktop\\Projectwork\\ProjectWork-SecondoAnno\\ITS.Allan.ProjectWork\\ITS.Allan.ProjectWork.Models\\ITS.Allan.ProjectWork.Models.csproj": {
+    "C:\\Users\\Luca\\Documents\\GitHub\\ProjectWork-SecondoAnno\\ITS.Allan.ProjectWork\\ITS.Allan.ProjectWork.Models\\ITS.Allan.ProjectWork.Models.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\aless\\Desktop\\Projectwork\\ProjectWork-SecondoAnno\\ITS.Allan.ProjectWork\\ITS.Allan.ProjectWork.Models\\ITS.Allan.ProjectWork.Models.csproj",
+        "projectUniqueName": "C:\\Users\\Luca\\Documents\\GitHub\\ProjectWork-SecondoAnno\\ITS.Allan.ProjectWork\\ITS.Allan.ProjectWork.Models\\ITS.Allan.ProjectWork.Models.csproj",
         "projectName": "ITS.Allan.ProjectWork.Models",
-        "projectPath": "C:\\Users\\aless\\Desktop\\Projectwork\\ProjectWork-SecondoAnno\\ITS.Allan.ProjectWork\\ITS.Allan.ProjectWork.Models\\ITS.Allan.ProjectWork.Models.csproj",
-        "packagesPath": "C:\\Users\\aless\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\aless\\Desktop\\Projectwork\\ProjectWork-SecondoAnno\\ITS.Allan.ProjectWork\\ITS.Allan.ProjectWork.Models\\obj\\",
+        "projectPath": "C:\\Users\\Luca\\Documents\\GitHub\\ProjectWork-SecondoAnno\\ITS.Allan.ProjectWork\\ITS.Allan.ProjectWork.Models\\ITS.Allan.ProjectWork.Models.csproj",
+        "packagesPath": "C:\\Users\\Luca\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Luca\\Documents\\GitHub\\ProjectWork-SecondoAnno\\ITS.Allan.ProjectWork\\ITS.Allan.ProjectWork.Models\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\aless\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Luca\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
