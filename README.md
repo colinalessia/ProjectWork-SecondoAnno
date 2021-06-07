@@ -5,6 +5,7 @@
 # Indice
 
 - [Membri](#membri)
+- [ER Diagram](#er-diagram)
 - [Link](#link)
 - [Licenza](#licenza)
 
@@ -24,6 +25,12 @@ Membri del gruppo:
     <b>Rappresentante gruppo: </b>
     Canton Lorenzo
 </p>
+
+</br>
+
+# ER diagram
+
+![](https://github.com/colinalessia/ProjectWork-SecondoAnno/blob/main/img/database_ER_diagram.PNG)
 
 </br>
 
