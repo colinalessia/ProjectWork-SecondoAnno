@@ -9,7 +9,7 @@ namespace ITS.Allan.ProjectWork.Models
 {
     public class Device
     {
-        [Required(ErrorMessage = "Device's id cannot be null")]
+        [Key]
         public int IdDevice { get; set; }
 
         [Required(ErrorMessage = "Device's brand cannot be null")]
