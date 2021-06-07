@@ -1,6 +1,6 @@
 using System;
 
-namespace Project
+namespace ITS.Allan.ProjectWork.WebApp
 {
     public class WeatherForecast
     {

@@ -6,7 +6,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
-namespace Project
+namespace ITS.Allan.ProjectWork.WebApp
 {
     public class Startup
     {

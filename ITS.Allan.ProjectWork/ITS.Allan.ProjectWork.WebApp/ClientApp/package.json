@@ -1,11 +1,11 @@
 {
-  "name": "project",
+  "name": "its.allan.projectwork.webapp",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
-    "build:ssr": "ng run Project:server:dev",
+    "build:ssr": "ng run ITS.Allan.ProjectWork.WebApp:server:dev",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"

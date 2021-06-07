@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Project.Controllers
+namespace ITS.Allan.ProjectWork.WebApp.Controllers
 {
     [ApiController]
     [Route("[controller]")]
