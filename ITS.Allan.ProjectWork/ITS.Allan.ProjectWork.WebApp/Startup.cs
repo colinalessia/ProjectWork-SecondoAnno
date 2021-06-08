@@ -5,6 +5,10 @@ using Microsoft.AspNetCore.SpaServices.AngularCli;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
+using ITS.Allan.ProjectWork.Data;
 
 namespace ITS.Allan.ProjectWork.WebApp
 {
@@ -20,12 +24,21 @@ namespace ITS.Allan.ProjectWork.WebApp
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddControllers();
+            services.AddDbContext<UniBookContext>(
+                options => options.UseSqlServer("Data Source=allansqlserver.database.windows.net;Initial Catalog=UniBook;User ID=allan;Password=Vmware1!"));
+            
+            
+
             services.AddControllersWithViews();
             // In production, the Angular files will be served from this directory
             services.AddSpaStaticFiles(configuration =>
             {
                 configuration.RootPath = "ClientApp/dist";
             });
+            services.AddScoped<DbContext, UniBookContext>();
+            services.AddScoped<IClassesRepository, ClassesRepository>();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

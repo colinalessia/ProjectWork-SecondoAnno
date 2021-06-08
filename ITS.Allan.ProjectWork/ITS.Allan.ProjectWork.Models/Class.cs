@@ -13,16 +13,12 @@ namespace ITS.Allan.ProjectWork.Models
         [Key]
         public int IdClass { get; set; }
 
-        [ForeignKey("IdTeacher")]
         public int IdTeacher { get; set; }
 
-        [ForeignKey("IdSubject")]
         public int IdSubject { get; set; }
 
-        [ForeignKey("IdClassroom")]
         public int IdClassroom { get; set; }
 
-        [ForeignKey("IdCourse")]
         public int IdCourse { get; set; }
 
         [Required]

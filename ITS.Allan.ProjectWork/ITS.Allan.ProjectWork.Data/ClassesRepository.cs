@@ -39,6 +39,11 @@ namespace ITS.Allan.ProjectWork.Data
                         .ToList();
         }
 
+        public Class GetById(int classId)
+        {
+            return _uniBookContext.Classes.FirstOrDefault(c => c.IdClass == classId);
+        }
+
         public void Insert(Class c)
         {
             _uniBookContext.Classes.Add(c);

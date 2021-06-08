@@ -7,7 +7,16 @@ using System.Threading.Tasks;
 
 namespace ITS.Allan.ProjectWork.Data
 {
-    interface IClassesRepository: IRepository<Class, int>
+    public interface IClassesRepository
     {
+        IEnumerable<Class> GetAll();
+
+        Class GetById(int classId);
+
+        void Insert(Class _class);
+
+        void Update(Class _class);
+
+        void Delete(int classId);
     }
 }

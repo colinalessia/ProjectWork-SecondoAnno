@@ -2,7 +2,6 @@ C:\Users\Luca\Documents\GitHub\ProjectWork-SecondoAnno\ITS.Allan.ProjectWork\ITS
 C:\Users\Luca\Documents\GitHub\ProjectWork-SecondoAnno\ITS.Allan.ProjectWork\ITS.Allan.ProjectWork.Models\bin\Debug\net5.0\ITS.Allan.ProjectWork.Models.dll
 C:\Users\Luca\Documents\GitHub\ProjectWork-SecondoAnno\ITS.Allan.ProjectWork\ITS.Allan.ProjectWork.Models\bin\Debug\net5.0\ref\ITS.Allan.ProjectWork.Models.dll
 C:\Users\Luca\Documents\GitHub\ProjectWork-SecondoAnno\ITS.Allan.ProjectWork\ITS.Allan.ProjectWork.Models\bin\Debug\net5.0\ITS.Allan.ProjectWork.Models.pdb
-C:\Users\Luca\Documents\GitHub\ProjectWork-SecondoAnno\ITS.Allan.ProjectWork\ITS.Allan.ProjectWork.Models\obj\Debug\net5.0\ITS.Allan.ProjectWork.Models.csprojAssemblyReference.cache
 C:\Users\Luca\Documents\GitHub\ProjectWork-SecondoAnno\ITS.Allan.ProjectWork\ITS.Allan.ProjectWork.Models\obj\Debug\net5.0\ITS.Allan.ProjectWork.Models.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\Luca\Documents\GitHub\ProjectWork-SecondoAnno\ITS.Allan.ProjectWork\ITS.Allan.ProjectWork.Models\obj\Debug\net5.0\ITS.Allan.ProjectWork.Models.AssemblyInfoInputs.cache
 C:\Users\Luca\Documents\GitHub\ProjectWork-SecondoAnno\ITS.Allan.ProjectWork\ITS.Allan.ProjectWork.Models\obj\Debug\net5.0\ITS.Allan.ProjectWork.Models.AssemblyInfo.cs
@@ -10,3 +9,4 @@ C:\Users\Luca\Documents\GitHub\ProjectWork-SecondoAnno\ITS.Allan.ProjectWork\ITS
 C:\Users\Luca\Documents\GitHub\ProjectWork-SecondoAnno\ITS.Allan.ProjectWork\ITS.Allan.ProjectWork.Models\obj\Debug\net5.0\ITS.Allan.ProjectWork.Models.dll
 C:\Users\Luca\Documents\GitHub\ProjectWork-SecondoAnno\ITS.Allan.ProjectWork\ITS.Allan.ProjectWork.Models\obj\Debug\net5.0\ref\ITS.Allan.ProjectWork.Models.dll
 C:\Users\Luca\Documents\GitHub\ProjectWork-SecondoAnno\ITS.Allan.ProjectWork\ITS.Allan.ProjectWork.Models\obj\Debug\net5.0\ITS.Allan.ProjectWork.Models.pdb
+C:\Users\Luca\Documents\GitHub\ProjectWork-SecondoAnno\ITS.Allan.ProjectWork\ITS.Allan.ProjectWork.Models\obj\Debug\net5.0\ITS.Allan.ProjectWork.Models.csprojAssemblyReference.cache

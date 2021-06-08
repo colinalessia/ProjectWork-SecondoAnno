@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ITS.Allan.ProjectWork.Model
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ITS.Allan.ProjectWork.Data", "ITS.Allan.ProjectWork.Data\ITS.Allan.ProjectWork.Data.csproj", "{441B553F-CBD4-413E-89EE-A20048BB6B9E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ITS.Allan.ProjectWork.WebApp", "ITS.Allan.ProjectWork.WebApp\ITS.Allan.ProjectWork.WebApp.csproj", "{67ACDA79-A148-4214-8ED2-6719CA933B00}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ITS.Allan.ProjectWork.WebApp", "ITS.Allan.ProjectWork.WebApp\ITS.Allan.ProjectWork.WebApp.csproj", "{AAD9C647-7591-408F-9363-235265C6563D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,10 +23,10 @@ Global
 		{441B553F-CBD4-413E-89EE-A20048BB6B9E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{441B553F-CBD4-413E-89EE-A20048BB6B9E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{441B553F-CBD4-413E-89EE-A20048BB6B9E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{67ACDA79-A148-4214-8ED2-6719CA933B00}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{67ACDA79-A148-4214-8ED2-6719CA933B00}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{67ACDA79-A148-4214-8ED2-6719CA933B00}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{67ACDA79-A148-4214-8ED2-6719CA933B00}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AAD9C647-7591-408F-9363-235265C6563D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AAD9C647-7591-408F-9363-235265C6563D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AAD9C647-7591-408F-9363-235265C6563D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AAD9C647-7591-408F-9363-235265C6563D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

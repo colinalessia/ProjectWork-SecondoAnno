@@ -6,7 +6,8 @@ namespace ITS.Allan.ProjectWork.Data
 {
     public class UniBookContext: DbContext
     {
-        public UniBookContext(DbContextOptions<UniBookContext> options): base(options)
+        public UniBookContext(DbContextOptions<UniBookContext> options)
+            : base(options)
         {
 
         }

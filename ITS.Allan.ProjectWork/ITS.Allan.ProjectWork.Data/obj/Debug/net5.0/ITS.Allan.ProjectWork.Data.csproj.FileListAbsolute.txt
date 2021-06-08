@@ -1,0 +1,15 @@
+C:\Users\Luca\Documents\GitHub\ProjectWork-SecondoAnno\ITS.Allan.ProjectWork\ITS.Allan.ProjectWork.Data\bin\Debug\net5.0\ITS.Allan.ProjectWork.Data.deps.json
+C:\Users\Luca\Documents\GitHub\ProjectWork-SecondoAnno\ITS.Allan.ProjectWork\ITS.Allan.ProjectWork.Data\bin\Debug\net5.0\ITS.Allan.ProjectWork.Data.dll
+C:\Users\Luca\Documents\GitHub\ProjectWork-SecondoAnno\ITS.Allan.ProjectWork\ITS.Allan.ProjectWork.Data\bin\Debug\net5.0\ref\ITS.Allan.ProjectWork.Data.dll
+C:\Users\Luca\Documents\GitHub\ProjectWork-SecondoAnno\ITS.Allan.ProjectWork\ITS.Allan.ProjectWork.Data\bin\Debug\net5.0\ITS.Allan.ProjectWork.Data.pdb
+C:\Users\Luca\Documents\GitHub\ProjectWork-SecondoAnno\ITS.Allan.ProjectWork\ITS.Allan.ProjectWork.Data\bin\Debug\net5.0\ITS.Allan.ProjectWork.Models.dll
+C:\Users\Luca\Documents\GitHub\ProjectWork-SecondoAnno\ITS.Allan.ProjectWork\ITS.Allan.ProjectWork.Data\bin\Debug\net5.0\ITS.Allan.ProjectWork.Models.pdb
+C:\Users\Luca\Documents\GitHub\ProjectWork-SecondoAnno\ITS.Allan.ProjectWork\ITS.Allan.ProjectWork.Data\obj\Debug\net5.0\ITS.Allan.ProjectWork.Data.csprojAssemblyReference.cache
+C:\Users\Luca\Documents\GitHub\ProjectWork-SecondoAnno\ITS.Allan.ProjectWork\ITS.Allan.ProjectWork.Data\obj\Debug\net5.0\ITS.Allan.ProjectWork.Data.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Luca\Documents\GitHub\ProjectWork-SecondoAnno\ITS.Allan.ProjectWork\ITS.Allan.ProjectWork.Data\obj\Debug\net5.0\ITS.Allan.ProjectWork.Data.AssemblyInfoInputs.cache
+C:\Users\Luca\Documents\GitHub\ProjectWork-SecondoAnno\ITS.Allan.ProjectWork\ITS.Allan.ProjectWork.Data\obj\Debug\net5.0\ITS.Allan.ProjectWork.Data.AssemblyInfo.cs
+C:\Users\Luca\Documents\GitHub\ProjectWork-SecondoAnno\ITS.Allan.ProjectWork\ITS.Allan.ProjectWork.Data\obj\Debug\net5.0\ITS.Allan.ProjectWork.Data.csproj.CoreCompileInputs.cache
+C:\Users\Luca\Documents\GitHub\ProjectWork-SecondoAnno\ITS.Allan.ProjectWork\ITS.Allan.ProjectWork.Data\obj\Debug\net5.0\ITS.Allan.ProjectWork.Data.csproj.CopyComplete
+C:\Users\Luca\Documents\GitHub\ProjectWork-SecondoAnno\ITS.Allan.ProjectWork\ITS.Allan.ProjectWork.Data\obj\Debug\net5.0\ITS.Allan.ProjectWork.Data.dll
+C:\Users\Luca\Documents\GitHub\ProjectWork-SecondoAnno\ITS.Allan.ProjectWork\ITS.Allan.ProjectWork.Data\obj\Debug\net5.0\ref\ITS.Allan.ProjectWork.Data.dll
+C:\Users\Luca\Documents\GitHub\ProjectWork-SecondoAnno\ITS.Allan.ProjectWork\ITS.Allan.ProjectWork.Data\obj\Debug\net5.0\ITS.Allan.ProjectWork.Data.pdb
