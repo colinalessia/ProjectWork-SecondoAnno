@@ -13,7 +13,7 @@ namespace ITS.Allan.ProjectWork.Models
         [Key]
         public int IdCourse { get; set; }
 
-        [ForeignKey("Campus")]
+        [ForeignKey("IdCampus")]
         public int IdCampus { get; set; }
 
         [Required(ErrorMessage = "Course's name cannot be null")]

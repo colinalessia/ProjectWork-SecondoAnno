@@ -26,7 +26,7 @@ namespace ITS.Allan.ProjectWork.WebApp
         {
             services.AddControllers();
             services.AddDbContext<UniBookContext>(
-                options => options.UseSqlServer("Data Source=allansqlserver.database.windows.net;Initial Catalog=UniBook;User ID=allan;Password=Vmware1!"));
+                options => options.UseSqlServer(Configuration.GetConnectionString("UniBook")));
             
             
 
@@ -37,7 +37,6 @@ namespace ITS.Allan.ProjectWork.WebApp
                 configuration.RootPath = "ClientApp/dist";
             });
             services.AddScoped<DbContext, UniBookContext>();
-            services.AddScoped<IClassesRepository, ClassesRepository>();
 
         }
 
