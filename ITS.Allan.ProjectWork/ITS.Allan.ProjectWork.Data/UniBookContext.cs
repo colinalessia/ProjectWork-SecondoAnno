@@ -13,6 +13,10 @@ namespace ITS.Allan.ProjectWork.Data
         }
 
         public DbSet<Class> Classes { get; set; }
+        public DbSet<Teacher> Teachers { get; set; }
+        public DbSet<Subject> Subjects { get; set; }
+        public DbSet<Classroom> Classrooms { get; set; }
         public DbSet<Course> Courses { get; set; }
+        
     }
 }

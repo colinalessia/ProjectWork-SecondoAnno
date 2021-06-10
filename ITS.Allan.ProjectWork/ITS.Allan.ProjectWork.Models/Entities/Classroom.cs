@@ -19,8 +19,7 @@ namespace ITS.Allan.ProjectWork.Models
         [ForeignKey("Device")]
         public int IdDevice { get; set; }
 
-        [Required(ErrorMessage = "Classroom's name cannot be null")]
-        [StringLength(50, ErrorMessage = "Classroom's name cannot be longer than 50 characters")]
+        [StringLength(15, ErrorMessage = "Classroom's name cannot be longer than 50 characters")]
         public string ClassroomName { get; set; }
     }
 }
