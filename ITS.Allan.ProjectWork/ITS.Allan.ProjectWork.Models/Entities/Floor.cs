@@ -15,5 +15,9 @@ namespace ITS.Allan.ProjectWork.Models
         [ForeignKey("IdDevice")]
         public int IdDevice { get; set; }
 
+        [Required(ErrorMessage = "Floor's name cannot be null")]
+        [StringLength(50, ErrorMessage = "Floor's name cannot be longer than 50 characters")]
+        public string FloorName { get; set; }
+
     }
 }
