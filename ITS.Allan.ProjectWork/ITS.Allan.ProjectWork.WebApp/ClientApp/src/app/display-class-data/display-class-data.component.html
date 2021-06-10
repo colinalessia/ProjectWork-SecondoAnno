@@ -7,7 +7,6 @@
 <table class='table table-striped' aria-labelledby="tableLabel" *ngIf="classes">
   <thead>
     <tr>
-      <th>Class</th>
       <th>Teacher</th>
       <th>subject</th>
       <th>Classroom</th>
@@ -18,7 +17,6 @@
   </thead>
   <tbody>
     <tr *ngFor="let class of classes">
-      <td>{{ class.idClass }}</td>
       <td>{{ class.teacherName }}</td>
       <td>{{ class.subjectName }}</td>
       <td>{{ class.classroomName }}</td>
