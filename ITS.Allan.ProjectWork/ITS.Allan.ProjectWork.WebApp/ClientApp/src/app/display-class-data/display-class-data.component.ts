@@ -9,46 +9,61 @@ export class DisplayClassDataComponent {
   public classes: Class[];
 
 
-  constructor(http: HttpClient, @Inject('BASE_URL') baseUrl: string) {
-    http.get<Class[]>(baseUrl + 'api/Classes').subscribe(result => {
+  constructor(@Inject(HttpClient) public http: HttpClient, @Inject('BASE_URL') public baseUrl: string) {
+    this.classes = [];
+    this.getClasses();
+
+  }
+
+  getClasses() {
+    this.http.get<Class[]>(this.baseUrl + 'api/Classes').subscribe(result => {
+      console.log("result" + result);
       this.classes = result;
+      for (let _class of this.classes) {
+        this.getTeacher(_class);
+        this.getSubject(_class);
+        this.getClassroom(_class);
+        this.getCourse(_class);
+      }
+      console.log(this.classes);
+    });
+  }
 
-      this.classes.forEach(function (_class) {
-        //GET teacher -> api/Teachers/IdTeacher
-        http.get<Teacher>(baseUrl + 'api/Teachers/' + _class.idTeacher).subscribe(result => {
-          let teacher = result;
-          //problemi visualizzazione causa spazio con bootstrap
-          _class.teacherName = teacher.firstName + " " + teacher.lastName;
-        }, error => console.error(error));
-        console.log(_class);
+  getTeacher(_class: Class) {
+    //GET teacher -> api/Teachers/IdTeacher
 
-        //GET subject -> api/Subjects/IdSubject
-        http.get<Subject>(baseUrl + 'api/Subjects/' + _class.idSubject).subscribe(result => {
-          let subject = result;
-
-          _class.subjectName = subject.subjectName;
-        }, error => console.error(error));
-        console.log(_class);
-
-        //GET classroom -> api/Classrooms/IdClassroom
-        http.get<Classroom>(baseUrl + 'api/Classrooms/' + _class.idClassroom).subscribe(result => {
-          let classroom = result;
-
-          _class.classroomName = classroom.classroomName;
-        }, error => console.error(error));
-        console.log(_class);
-
-        //GET course -> api/Courses/IdCourse
-        http.get<Course>(baseUrl + 'api/Courses/' + _class.idCourse).subscribe(result => {
-          let course = result;
-
-          _class.courseName = course.courseName;
-        }, error => console.error(error));
-        console.log(_class);
-
-      });
+    this.http.get<Teacher>(this.baseUrl + 'api/Teachers/' + _class.idTeacher).subscribe(result => {
+      //problemi visualizzazione causa spazio con bootstrap
+      _class.teacherName = result.firstName + " " + result.lastName;
     }, error => console.error(error));
-    
+    console.log(_class);
+  }
+
+  getSubject(_class) {
+    //GET subject -> api/Subjects/IdSubject
+    this.http.get<Subject>(this.baseUrl + 'api/Subjects/' + _class.idSubject).subscribe(result => {
+
+      _class.subjectName = result.subjectName;
+    }, error => console.error(error));
+    console.log(_class);
+  }
+
+  getClassroom(_class) {
+    //GET classroom -> api/Classrooms/IdClassroom
+    this.http.get<Classroom>(this.baseUrl + 'api/Classrooms/' + _class.idClassroom).subscribe(result => {
+
+      _class.classroomName = result.classroomName;
+    }, error => console.error(error));
+    console.log(_class);
+  }
+
+  getCourse(_class) {
+    //GET course -> api/Courses/IdCourse
+    this.http.get<Course>(this.baseUrl + 'api/Courses/' + _class.idCourse).subscribe(result => {
+
+      _class.courseName = result.courseName;
+    }, error => console.error(error));
+    console.log(_class);
   }
 }
 
