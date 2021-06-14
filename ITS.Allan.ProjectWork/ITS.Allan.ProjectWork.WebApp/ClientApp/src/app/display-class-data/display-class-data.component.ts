@@ -1,107 +1,62 @@
-import { Component, Inject } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { Component, Inject, OnInit } from '@angular/core';
+
+import Class from '../shared/models/Class';
+import Teacher from '../shared/models/Teacher';
+import Subject from '../shared/models/Subject';
+import Classroom from '../shared/models/Classroom';
+import Course from '../shared/models/Course';
+
+import ClassService from '../shared/services/class.service';
+import TeacherService from '../shared/services/teacher.service';
+import SubjectService from '../shared/services/subject.service';
+import ClassroomService from '../shared/services/classroom.service';
+import CourseService from '../shared/services/course.service';
+
 
 @Component({
   selector: 'app-display-class-data',
   templateUrl: './display-class-data.component.html'
 })
-export class DisplayClassDataComponent {
-  public classes: Class[];
+export class DisplayClassDataComponent implements OnInit{
+  classes: Array<Class>;
+  teachers: Array<Teacher>;
+  subjects: Array<Subject>;
+  classrooms: Array<Classroom>;
+  courses: Array<Course>;
 
+  
 
-  constructor(@Inject(HttpClient) public http: HttpClient, @Inject('BASE_URL') public baseUrl: string) {
-    this.classes = [];
-    this.getClasses();
-
+  constructor(
+    private classService: ClassService,
+    private teacherService: TeacherService,
+    private subjectService: SubjectService,
+    private classroomService: ClassroomService,
+    private courseService: CourseService) {
+    
   }
 
-  getClasses() {
-    this.http.get<Class[]>(this.baseUrl + 'api/Classes').subscribe(result => {
-      console.log("result" + result);
-      this.classes = result;
+
+  ngOnInit(): void {
+    this.classService.getAll().subscribe(data => {
+      this.classes = data;
       for (let _class of this.classes) {
-        this.getTeacher(_class);
-        this.getSubject(_class);
-        this.getClassroom(_class);
-        this.getCourse(_class);
+        //GET teacher by id
+        this.teacherService.get(_class.idTeacher.toString()).subscribe(data => {
+          _class.teacherName = data.firstName + " " + data.lastName;
+        });
+        //GET subject by id
+        this.subjectService.get(_class.idSubject.toString()).subscribe(data => {
+          _class.subjectName = data.subjectName;
+        });
+        //GET classroom by id
+        this.classroomService.get(_class.idClassroom.toString()).subscribe(data => {
+          _class.classroomName = data.classroomName;
+        });
+        //GET course by id
+        this.courseService.get(_class.idCourse.toString()).subscribe(data => {
+          _class.courseName = data.courseName;
+        });
       }
-      console.log(this.classes);
     });
   }
-
-  getTeacher(_class: Class) {
-    //GET teacher -> api/Teachers/IdTeacher
-
-    this.http.get<Teacher>(this.baseUrl + 'api/Teachers/' + _class.idTeacher).subscribe(result => {
-      //problemi visualizzazione causa spazio con bootstrap
-      _class.teacherName = result.firstName + " " + result.lastName;
-    }, error => console.error(error));
-    console.log(_class);
-  }
-
-  getSubject(_class) {
-    //GET subject -> api/Subjects/IdSubject
-    this.http.get<Subject>(this.baseUrl + 'api/Subjects/' + _class.idSubject).subscribe(result => {
-
-      _class.subjectName = result.subjectName;
-    }, error => console.error(error));
-    console.log(_class);
-  }
-
-  getClassroom(_class) {
-    //GET classroom -> api/Classrooms/IdClassroom
-    this.http.get<Classroom>(this.baseUrl + 'api/Classrooms/' + _class.idClassroom).subscribe(result => {
-
-      _class.classroomName = result.classroomName;
-    }, error => console.error(error));
-    console.log(_class);
-  }
-
-  getCourse(_class) {
-    //GET course -> api/Courses/IdCourse
-    this.http.get<Course>(this.baseUrl + 'api/Courses/' + _class.idCourse).subscribe(result => {
-
-      _class.courseName = result.courseName;
-    }, error => console.error(error));
-    console.log(_class);
-  }
-}
-
-interface Class {
-  idClass: number;
-  idTeacher: number;
-  idSubject: number;
-  idClassroom: number;
-  idCourse: number;
-  startTime: Date;
-  endTime: Date;
-  teacherName: string;
-  subjectName: string;
-  classroomName: string;
-  courseName: string;
-}
-
-class Teacher {
-  idTeacher: number;
-  firstName: string;
-  lastName: string;
-}
-
-class Subject {
-  idSubject: number;
-  subjectName: string;
-}
-
-class Course {
-  idCourse: number;
-  idCampus: number;
-  courseName: string;
-  courseDuration: number;
-}
-
-class Classroom {
-  idClassroom: number;
-  idFloor: number;
-  idDevice: number;
-  classroomName: string;
 }
