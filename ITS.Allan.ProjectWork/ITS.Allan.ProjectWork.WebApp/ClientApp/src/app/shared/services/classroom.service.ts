@@ -1,38 +1,38 @@
-import { Injectable, Component } from '@angular/core';
+import { Inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 import Classroom from '../models/Classroom';
 
 
-@Injectable()
 export default class ClassroomService {
-  public API = 'https://localhost:44301/api';
-  public CLASSROOM_API = `${this.API}/Classrooms`;
+  public classroomUrl = '';
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, @Inject('BASE_URL') private baseUrl: string) {
+    this.classroomUrl = this.baseUrl + 'api/Classrooms';
+  }
 
   getAll(): Observable<Array<Classroom>> {
-    return this.http.get<Array<Classroom>>(this.CLASSROOM_API);
+    return this.http.get<Array<Classroom>>(this.classroomUrl);
   }
 
   get(id: string): Observable<Classroom> {
-    return this.http.get<Classroom>(`${this.CLASSROOM_API}/${id}`);
+    return this.http.get<Classroom>(`${this.classroomUrl}/${id}`);
   }
 
   save(classroom: Classroom): Observable<Classroom> {
     let result: Observable<Classroom>;
     if (classroom.idClassroom) {
       result = this.http.put<Classroom>(
-        `${this.CLASSROOM_API}/${classroom.idClassroom}`,
+        `${this.classroomUrl}/${classroom.idClassroom}`,
         classroom
       );
     } else {
-      result = this.http.post<Classroom>(this.CLASSROOM_API, classroom);
+      result = this.http.post<Classroom>(this.classroomUrl, classroom);
     }
     return result;
   }
 
   remove(id: number) {
-    return this.http.delete(`${this.CLASSROOM_API}/${id.toString()}`);
+    return this.http.delete(`${this.classroomUrl}/${id.toString()}`);
   }
 }

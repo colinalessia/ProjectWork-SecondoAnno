@@ -15,6 +15,9 @@ import SubjectService from './shared/services/subject.service';
 import ClassroomService from './shared/services/classroom.service';
 import CourseService from './shared/services/course.service';
 
+import { MatSliderModule } from '@angular/material/slider';
+import {NoopAnimationsModule} from '@angular/platform-browser/animations';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,6 +27,8 @@ import CourseService from './shared/services/course.service';
     DisplayClassDataComponent,
   ],
   imports: [
+    MatSliderModule,
+    NoopAnimationsModule,
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
     HttpClientModule,
     FormsModule,

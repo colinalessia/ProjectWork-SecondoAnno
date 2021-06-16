@@ -1,22 +1,22 @@
 <p>This component adds class data to database.</p>
 <form [formGroup]="form">
   <select formControlName="teachers">
-    <option *ngFor="let teacher of teachers" [ngValue]="teacher">
+    <option *ngFor="let teacher of teachers" [ngValue]="teacher.idTeacher">
       {{ teacher.lastName}}
     </option>
   </select>
   <select formControlName="subjects">
-    <option *ngFor="let subject of subjects" [ngValue]="subject">
+    <option *ngFor="let subject of subjects" [ngValue]="subject.idSubject">
       {{ subject.subjectName}}
     </option>
   </select>
   <select formControlName="classrooms">
-    <option *ngFor="let classroom of classrooms" [ngValue]="classroom">
+    <option *ngFor="let classroom of classrooms" [ngValue]="classroom.idClassroom">
       {{ classroom.classroomName}}
     </option>
   </select>
   <select formControlName="courses">
-    <option *ngFor="let course of courses" [ngValue]="course">
+    <option *ngFor="let course of courses" [ngValue]="course.idCourse">
       {{ course.courseName}}
     </option>
   </select>

@@ -1,12 +1,15 @@
-import { Component, Inject, OnInit } from '@angular/core';
+//modules
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from "@angular/forms";
-import { HttpClient } from '@angular/common/http';
-import { of } from 'rxjs';
+
+//models
 import Class from '../shared/models/Class';
 import Teacher from '../shared/models/Teacher';
 import Subject from '../shared/models/Subject';
 import Classroom from '../shared/models/Classroom';
 import Course from '../shared/models/Course';
+
+//services
 import ClassService from '../shared/services/class.service';
 import TeacherService from '../shared/services/teacher.service';
 import SubjectService from '../shared/services/subject.service';
@@ -73,20 +76,11 @@ export class AddClassDataComponent implements OnInit{
     
   submit() {
     var _class = new Class();
-    var teacher = new Teacher();
-    var classroom = new Classroom();
-    var subject = new Subject();
-    var course = new Course();
 
-    classroom = this.form.get('classrooms').value;
-    teacher = this.form.get('teachers').value;
-    subject = this.form.get('subjects').value;
-    course = this.form.get('courses').value;
-
-    _class.idTeacher = teacher.idTeacher;
-    _class.idSubject = subject.idSubject;
-    _class.idClassroom = classroom.idClassroom;
-    _class.idCourse = course.idCourse;
+    _class.idTeacher = this.form.get('teachers').value;
+    _class.idSubject = this.form.get('subjects').value;
+    _class.idClassroom = this.form.get('classrooms').value;
+    _class.idCourse = this.form.get('courses').value;
 
     //to do implementare per inserire le date
     _class.startTime = new Date("1/19/2016 11:47:52 AM");

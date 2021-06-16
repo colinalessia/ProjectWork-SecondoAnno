@@ -1,11 +1,10 @@
-import { Component, Inject, OnInit } from '@angular/core';
+//modules
+import { Component, OnInit } from '@angular/core';
 
+//models
 import Class from '../shared/models/Class';
-import Teacher from '../shared/models/Teacher';
-import Subject from '../shared/models/Subject';
-import Classroom from '../shared/models/Classroom';
-import Course from '../shared/models/Course';
 
+//services
 import ClassService from '../shared/services/class.service';
 import TeacherService from '../shared/services/teacher.service';
 import SubjectService from '../shared/services/subject.service';
@@ -19,12 +18,6 @@ import CourseService from '../shared/services/course.service';
 })
 export class DisplayClassDataComponent implements OnInit{
   classes: Array<Class>;
-  teachers: Array<Teacher>;
-  subjects: Array<Subject>;
-  classrooms: Array<Classroom>;
-  courses: Array<Course>;
-
-  
 
   constructor(
     private classService: ClassService,

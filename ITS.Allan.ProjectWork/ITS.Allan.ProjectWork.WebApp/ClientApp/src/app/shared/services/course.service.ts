@@ -1,38 +1,38 @@
-import { Injectable, Component } from '@angular/core';
+import { Inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 import Course from '../models/Course';
 
 
-@Injectable()
 export default class CourseService {
-  public API = 'https://localhost:44301/api';
-  public COURSE_API = `${this.API}/Courses`;
+  public courseUrl = '';
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, @Inject('BASE_URL') private baseUrl: string) {
+    this.courseUrl = this.baseUrl + 'api/Courses';
+  }
 
   getAll(): Observable<Array<Course>> {
-    return this.http.get<Array<Course>>(this.COURSE_API);
+    return this.http.get<Array<Course>>(this.courseUrl);
   }
 
   get(id: string): Observable<Course> {
-    return this.http.get<Course>(`${this.COURSE_API}/${id}`);
+    return this.http.get<Course>(`${this.courseUrl}/${id}`);
   }
 
   save(course: Course): Observable<Course> {
     let result: Observable<Course>;
     if (course.idCourse) {
       result = this.http.put<Course>(
-        `${this.COURSE_API}/${course.idCourse}`,
+        `${this.courseUrl}/${course.idCourse}`,
         course
       );
     } else {
-      result = this.http.post<Course>(this.COURSE_API, course);
+      result = this.http.post<Course>(this.courseUrl, course);
     }
     return result;
   }
 
   remove(id: number) {
-    return this.http.delete(`${this.COURSE_API}/${id.toString()}`);
+    return this.http.delete(`${this.courseUrl}/${id.toString()}`);
   }
 }
