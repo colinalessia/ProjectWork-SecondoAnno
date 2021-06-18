@@ -2,10 +2,10 @@
 import { Component, OnInit } from '@angular/core';
 
 //models
-import Class from '../shared/models/Class';
+import Lesson from '../shared/models/Lesson';
 
 //services
-import ClassService from '../shared/services/class.service';
+import LessonService from '../shared/services/lesson.service';
 import TeacherService from '../shared/services/teacher.service';
 import SubjectService from '../shared/services/subject.service';
 import ClassroomService from '../shared/services/classroom.service';
@@ -17,10 +17,10 @@ import CourseService from '../shared/services/course.service';
   templateUrl: './display-class-data.component.html'
 })
 export class DisplayClassDataComponent implements OnInit{
-  classes: Array<Class>;
+  lessons: Array<Lesson>;
 
   constructor(
-    private classService: ClassService,
+    private lessonService: LessonService,
     private teacherService: TeacherService,
     private subjectService: SubjectService,
     private classroomService: ClassroomService,
@@ -30,24 +30,24 @@ export class DisplayClassDataComponent implements OnInit{
 
 
   ngOnInit(): void {
-    this.classService.getAll().subscribe(data => {
-      this.classes = data;
-      for (let _class of this.classes) {
+    this.lessonService.getAll().subscribe(data => {
+      this.lessons = data;
+      for (let lesson of this.lessons) {
         //GET teacher by id
-        this.teacherService.get(_class.idTeacher.toString()).subscribe(data => {
-          _class.teacherName = data.firstName + " " + data.lastName;
+        this.teacherService.get(lesson.idTeacher.toString()).subscribe(data => {
+          lesson.teacherName = data.firstName + " " + data.lastName;
         });
         //GET subject by id
-        this.subjectService.get(_class.idSubject.toString()).subscribe(data => {
-          _class.subjectName = data.subjectName;
+        this.subjectService.get(lesson.idSubject.toString()).subscribe(data => {
+          lesson.subjectName = data.subjectName;
         });
         //GET classroom by id
-        this.classroomService.get(_class.idClassroom.toString()).subscribe(data => {
-          _class.classroomName = data.classroomName;
+        this.classroomService.get(lesson.idClassroom.toString()).subscribe(data => {
+          lesson.classroomName = data.classroomName;
         });
         //GET course by id
-        this.courseService.get(_class.idCourse.toString()).subscribe(data => {
-          _class.courseName = data.courseName;
+        this.courseService.get(lesson.idCourse.toString()).subscribe(data => {
+          lesson.courseName = data.courseName;
         });
       }
     });

@@ -30,15 +30,15 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="ClientApp\src\app\shared\models\Lesson.ts" />
     <None Remove="ClientApp\src\app\shared\services\class - Copy (2).service.ts" />
     <None Remove="ClientApp\src\app\shared\services\class - Copy (3).service.ts" />
     <None Remove="ClientApp\src\app\shared\services\class - Copy.service.ts" />
-    <None Remove="ClientApp\src\app\shared\services\class.service.ts" />
     <None Remove="ClientApp\src\app\shared\services\classroom.service.ts" />
     <None Remove="ClientApp\src\app\shared\services\course.service.ts" />
+    <None Remove="ClientApp\src\app\shared\services\lesson.service.ts" />
     <None Remove="ClientApp\src\app\shared\services\subject.service.ts" />
     <None Remove="ClientApp\src\app\shared\services\teacher.service.ts" />
-    <None Remove="ClientApp\src\app\shared\models\Class.ts" />
     <None Remove="ClientApp\src\app\shared\models\Classroom.ts" />
     <None Remove="ClientApp\src\app\shared\models\Course.ts" />
     <None Remove="ClientApp\src\app\shared\models\Subject.ts" />
@@ -53,12 +53,12 @@
   <ItemGroup>
     <TypeScriptCompile Include="ClientApp\src\app\shared\services\classroom.service.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\shared\services\course.service.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\shared\services\lesson.service.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\shared\services\subject.service.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\shared\services\teacher.service.ts">
       <SubType>Code</SubType>
     </TypeScriptCompile>
-    <TypeScriptCompile Include="ClientApp\src\app\shared\services\class.service.ts" />
-    <TypeScriptCompile Include="ClientApp\src\app\shared\models\Class.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\shared\models\Lesson.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\shared\models\Classroom.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\shared\models\Course.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\shared\models\Subject.ts" />

@@ -13,10 +13,10 @@ namespace ITS.Allan.ProjectWork.Models
         [Key]
         public int IdClassroom { get; set; }
 
-        [ForeignKey("Floor")]
+        [ForeignKey("IdFloor")]
         public int IdFloor { get; set; }
 
-        [ForeignKey("Device")]
+        [ForeignKey("IdDevice")]
         public int IdDevice { get; set; }
 
         [StringLength(15, ErrorMessage = "Classroom's name cannot be longer than 50 characters")]

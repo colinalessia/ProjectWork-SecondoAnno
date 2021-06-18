@@ -1,10 +1,10 @@
-<h1 id="tableLabel">Class</h1>
+<h1 id="tableLabel">Lessons</h1>
 
-<p>This component displays class data from database.</p>
+<p>This component displays lesson data from database.</p>
 
-<p *ngIf="!classes"><em>Loading...</em></p>
+<p *ngIf="!lessons"><em>Loading...</em></p>
 
-<table class='table table-striped' aria-labelledby="tableLabel" *ngIf="classes">
+<table class='table table-striped' aria-labelledby="tableLabel" *ngIf="lessons">
   <thead>
     <tr>
       <th>Teacher</th>
@@ -16,13 +16,13 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let class of classes">
-      <td>{{ class.teacherName }}</td>
-      <td>{{ class.subjectName }}</td>
-      <td>{{ class.classroomName }}</td>
-      <td>{{ class.courseName }}</td>
-      <td>{{ class.startTime }}</td>
-      <td>{{ class.endTime }}</td>
+    <tr *ngFor="let lesson of lessons">
+      <td>{{ lesson.teacherName }}</td>
+      <td>{{ lesson.subjectName }}</td>
+      <td>{{ lesson.lessonroomName }}</td>
+      <td>{{ lesson.courseName }}</td>
+      <td>{{ lesson.startTime }}</td>
+      <td>{{ lesson.endTime }}</td>
     </tr>
   </tbody>
 </table>
