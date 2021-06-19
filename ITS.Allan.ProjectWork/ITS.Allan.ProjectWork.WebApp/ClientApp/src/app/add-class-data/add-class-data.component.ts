@@ -1,6 +1,5 @@
 //modules
-import { Component, ViewEncapsulation } from '@angular/core';
-import { createElement } from '@syncfusion/ej2-base';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { DropDownList } from '@syncfusion/ej2-dropdowns';
 import { DateTimePicker } from '@syncfusion/ej2-calendars';
 import {
@@ -22,6 +21,7 @@ import LessonService from '../shared/services/lesson.service';
 import Subject from '../shared/models/Subject';
 import Classroom from '../shared/models/Classroom';
 import Course from '../shared/models/Course';
+import { isNullOrUndefined } from 'util';
 
 L10n.load({
   'en-US': {
@@ -30,6 +30,7 @@ L10n.load({
       'cancelButton': 'Close',
       'deleteButton': 'Remove',
       'newEvent': 'Add Lesson',
+      'editEvent': 'Edit Lesson'
     },
   }
 });
@@ -44,7 +45,7 @@ L10n.load({
   providers: [DayService, WeekService, WorkWeekService, MonthService, AgendaService, ResizeService, DragAndDropService]
 })
 
-export class AddClassDataComponent {
+export class AddClassDataComponent implements OnInit{
   public lessons: Array<Lesson>;
   public teachers: Array<Teacher>;
   public subjects: Array<Subject>;
@@ -63,7 +64,7 @@ export class AddClassDataComponent {
   public dropDownCourse: { [key: string]: Object }[] = [
     { Name: '', Id: '' }
   ];
-  public selectedDate: Date = new Date(2018, 1, 15);
+  public selectedDate: Date = new Date(2021, 6, 19);
   public views: Array<string> = ['Day', 'Week', 'WorkWeek', 'Month'];
   public eventSettings: EventSettingsModel;
   //@ViewChild('scheduleObj')
@@ -75,10 +76,17 @@ export class AddClassDataComponent {
   public drowDownListCourses: DropDownList;
   public drowDownListClassrooms: DropDownList;
 
-  public teacherFields: Object = { text: 'TeacherText', value: 'TeacherText' };
-  public subjectFields: Object = { text: 'SubjectText', value: 'SubjectText' };
-  public classroomFields: Object = { text: 'ClassroomText', value: 'ClassroomText' };
-  public courseFields: Object = { text: 'CourseText', value: 'CourseText' };
+
+  public data: object[] = [{
+    Id: 1,
+    Subject: "Inglese Tecnico",
+    Teacher: "Andrea Dottor",
+    Classroom: "S0",
+    Course: "Industrial Internet of Things Developer 2",
+    StartTime: "7/20/2021 10:00 AM",
+    EndTime: "7/20/2021 10:00 AM",
+  }];
+
 
   constructor(
     private lessonService: LessonService,
@@ -87,227 +95,206 @@ export class AddClassDataComponent {
     private classroomService: ClassroomService,
     private courseService: CourseService) {
 
-    this.lessonService.getAll().subscribe(data => {
-      this.lessons = data;
+
+  }
+  ngOnInit() {
+
+    this.lessonService.getAll().subscribe(res => {
+      this.lessons = res;
+
       for (let lesson of this.lessons) {
         //GET teacher by id
         this.teacherService.get(lesson.idTeacher.toString()).subscribe(data => {
           lesson.teacherName = data.firstName + " " + data.lastName;
-        });
-        //GET subject by id
-        this.subjectService.get(lesson.idSubject.toString()).subscribe(data => {
-          lesson.subjectName = data.subjectName;
-        });
-        //GET classroom by id
-        this.classroomService.get(lesson.idClassroom.toString()).subscribe(data => {
-          lesson.classroomName = data.classroomName;
-        });
-        //GET course by id
-        this.courseService.get(lesson.idCourse.toString()).subscribe(data => {
-          lesson.courseName = data.courseName;
+          //GET subject by id
+          this.subjectService.get(lesson.idSubject.toString()).subscribe(data => {
+            lesson.subjectName = data.subjectName;
+            //GET classroom by id
+            this.classroomService.get(lesson.idClassroom.toString()).subscribe(data => {
+              lesson.classroomName = data.classroomName;
+              //GET course by id
+              this.courseService.get(lesson.idCourse.toString()).subscribe(data => {
+                lesson.courseName = data.courseName;
+
+                this.data.push({
+                  Id: lesson.idLesson,
+                  Subject: lesson.subjectName,
+                  Teacher: lesson.teacherName,
+                  Classroom: lesson.classroomName,
+                  Course: lesson.courseName,
+                  StartTime: lesson.startTime,
+                  EndTime: lesson.endTime
+                })
+
+                this.eventSettings = {
+                  dataSource: this.data.slice(1)
+                };
+              });
+            });
+          });
+        }); 
+      }
+    });
+    this.teacherService.getAll().subscribe(data => {
+      this.teachers = data;
+
+      for (let teacher of this.teachers) {
+        this.dropDownTeacher.push({
+          Name: teacher.firstName + " " + teacher.lastName, Id: teacher.idTeacher.toString()
         });
       }
-      this.eventSettings = {
-        dataSource: this.lessons
-        
-
-        
-      };
-      console.log(this.eventSettings);
-
-      this.teacherService.getAll().subscribe(data => {
-        this.teachers = data;
-
-        for (let teacher of this.teachers) {
-          this.dropDownTeacher.push({
-            Name: teacher.firstName + " " + teacher.lastName, Id : teacher.idTeacher.toString()
-          });
-        }
-        
-      });
-
-      this.subjectService.getAll().subscribe(data => {
-        this.subjects = data;
-
-        for (let subject of this.subjects) {
-          this.dropDownSubject.push({
-            Name: subject.subjectName, Id: subject.idSubject.toString()
-          });
-        }
-
-      });
-
-      this.classroomService.getAll().subscribe(data => {
-        this.classrooms = data;
-
-        for (let classroom of this.classrooms) {
-          this.dropDownClassroom.push({
-            Name: classroom.classroomName, Id: classroom.idClassroom.toString()
-          });
-        }
-
-      });
-
-      this.courseService.getAll().subscribe(data => {
-        this.courses = data;
-
-        for (let course of this.courses) {
-          this.dropDownCourse.push({
-            Name: course.courseName, Id: course.idCourse.toString()
-          });
-        }
-
-      });
 
     });
-  }
 
-  oneventRendered(args: EventRenderedArgs): void {
-    let categoryColor: string = args.data.CategoryColor as string;
-    if (!args.element || !categoryColor) {
-      return;
-    }
-    if (this.scheduleObj.currentView === 'Agenda') {
-      (args.element.firstChild as HTMLElement).style.borderLeftColor = categoryColor;
-    } else {
-      args.element.style.backgroundColor = categoryColor;
-    }
-  }
+    this.subjectService.getAll().subscribe(data => {
+      this.subjects = data;
 
-  onPopupClose(args: PopupCloseEventArgs): void {
-    console.log(this.eventSettings);
-  }
+      for (let subject of this.subjects) {
+        this.dropDownSubject.push({
+          Name: subject.subjectName, Id: subject.idSubject.toString()
+        });
+      }
 
+    });
+
+    this.classroomService.getAll().subscribe(data => {
+      this.classrooms = data;
+
+      for (let classroom of this.classrooms) {
+        this.dropDownClassroom.push({
+          Name: classroom.classroomName, Id: classroom.idClassroom.toString()
+        });
+      }
+
+    });
+
+    this.courseService.getAll().subscribe(data => {
+      this.courses = data;
+
+      for (let course of this.courses) {
+        this.dropDownCourse.push({
+          Name: course.courseName, Id: course.idCourse.toString()
+        });
+      }
+
+    });
+        
+  }
+      
   onPopupOpen(args: PopupOpenEventArgs): void {
-
     if (args.type === 'Editor') {
-      // Create required custom elements in initial time
-      if (!args.element.querySelector('.custom-field-row')) {
-        let row: HTMLElement = createElement('div', { className: 'custom-field-row' });
-        let formElement: HTMLElement = <HTMLElement>args.element.querySelector('.e-schedule-form');
-        formElement.firstChild.insertBefore(row, args.element.querySelector('.e-title-location-row'));
-        let container: HTMLElement = createElement('div', { className: 'custom-field-container' });
-        let inputEle: HTMLInputElement = createElement('input', {
-          className: 'e-field', attrs: { name: 'Teacher' }
-        }) as HTMLInputElement;
-        container.appendChild(inputEle);
-        row.appendChild(container);
-
-        this.drowDownListTeachers = new DropDownList({
-          
-          dataSource: this.dropDownTeacher.slice(1),
-
-          fields:
-          {
-            text: 'Name',
-            value: 'Name'
-          },
-          value: (args.data as { [key: string]: Object }).EventType as string,
-          floatLabelType: 'Auto',
-          placeholder: 'Teacher',
-          allowFiltering: true,
-          filterBarPlaceholder: 'Search',
-
-        });
-
-        this.drowDownListTeachers.appendTo(inputEle);
-        inputEle.setAttribute('name', 'teacherName');
-      }
-      if (!args.element.querySelector('.custom-field-row1')) {
-        let row: HTMLElement = createElement('div', { className: 'custom-field-row1' });
-        let formElement: HTMLElement = <HTMLElement>args.element.querySelector('.e-schedule-form');
-        formElement.firstChild.insertBefore(row, args.element.querySelector('.e-title-location-row'));
-        let container: HTMLElement = createElement('div', { className: 'custom-field-container1' });
-        let inputEle: HTMLInputElement = createElement('input', {
-          className: 'e-field', attrs: { name: 'Subject' }
-        }) as HTMLInputElement;
-        container.appendChild(inputEle);
-        row.appendChild(container);
-
-        this.drowDownListSubjects = new DropDownList({
-
+      //Subject
+      let subjectElement: HTMLInputElement = args.element.querySelector('#Subject') as HTMLInputElement;
+      
+      if (!subjectElement.classList.contains('e-dropdownlist')) {
+        let dropDownListObject: DropDownList = new DropDownList({
+          placeholder: 'Choose subject',
+          value: ((<{ [key: string]: Object }>(args.data)).Subject as string),
           dataSource: this.dropDownSubject.slice(1),
-
           fields:
           {
             text: 'Name',
-            value: 'Name',
+            value: 'Name'
           },
-          value: (args.data as { [key: string]: Object }).EventType as string,
-          floatLabelType: 'Auto',
-          placeholder: 'Subject',
           allowFiltering: true,
-          filterBarPlaceholder: 'Search',
-
+          filterBarPlaceholder: 'Search'
         });
-        console.log(this.drowDownListSubjects.value);
-
-        this.drowDownListSubjects.appendTo(inputEle);
-        inputEle.setAttribute('name', 'subjectName'); //da conflitto con subject -> title
+        dropDownListObject.appendTo(subjectElement);
       }
-      
-      if (!args.element.querySelector('.custom-field-row2')) {
-        let row: HTMLElement = createElement('div', { className: 'custom-field-row2' });
-        let formElement: HTMLElement = <HTMLElement>args.element.querySelector('.e-schedule-form');
-        formElement.firstChild.insertBefore(row, args.element.querySelector('.e-title-location-row'));
-        let container: HTMLElement = createElement('div', { className: 'custom-field-container2' });
-        let inputEle: HTMLInputElement = createElement('input', {
-          className: 'e-field', attrs: { name: 'Classroom' }
-        }) as HTMLInputElement;
-        container.appendChild(inputEle);
-        row.appendChild(container);
-
-        this.drowDownListClassrooms = new DropDownList({
-
+      //Teacher
+      let teacherElement: HTMLInputElement = args.element.querySelector('#Teacher') as HTMLInputElement;
+      if (!teacherElement.classList.contains('e-dropdownlist')) {
+        let dropDownListObject: DropDownList = new DropDownList({
+          placeholder: 'Choose teacher',
+          value: ((<{ [key: string]: Object }>(args.data)).Teacher as string),
+          dataSource: this.dropDownTeacher.slice(1),
+          fields:
+          {
+            text: 'Name',
+            value: 'Name'
+          },
+          allowFiltering: true,
+          filterBarPlaceholder: 'Search'
+        });
+        dropDownListObject.appendTo(teacherElement);
+      }
+      //Classroom
+      let classroomElement: HTMLInputElement = args.element.querySelector('#Classroom') as HTMLInputElement;
+      if (!classroomElement.classList.contains('e-dropdownlist')) {
+        let dropDownListObject: DropDownList = new DropDownList({
+          placeholder: 'Choose classroom',
+          value: ((<{ [key: string]: Object }>(args.data)).Classroom as string),
           dataSource: this.dropDownClassroom.slice(1),
-
           fields:
           {
             text: 'Name',
             value: 'Name'
           },
-          value: (args.data as { [key: string]: Object }).EventType as string,
-          floatLabelType: 'Auto',
-          placeholder: 'Classroom',
           allowFiltering: true,
-          filterBarPlaceholder: 'Search',
-
+          filterBarPlaceholder: 'Search'
         });
-
-        this.drowDownListClassrooms.appendTo(inputEle);
-        inputEle.setAttribute('name', 'classroomName');
+        dropDownListObject.appendTo(classroomElement);
       }
-      if (!args.element.querySelector('.custom-field-row3')) {
-        let row: HTMLElement = createElement('div', { className: 'custom-field-row3' });
-        let formElement: HTMLElement = <HTMLElement>args.element.querySelector('.e-schedule-form');
-        formElement.firstChild.insertBefore(row, args.element.querySelector('.e-title-location-row'));
-        let container: HTMLElement = createElement('div', { className: 'custom-field-container3' });
-        let inputEle: HTMLInputElement = createElement('input', {
-          className: 'e-field', attrs: { name: 'Course' }
-        }) as HTMLInputElement;
-        container.appendChild(inputEle);
-        row.appendChild(container);
-        this.drowDownListCourses = new DropDownList({
+      //Teacher
+      let courseElement: HTMLInputElement = args.element.querySelector('#Course') as HTMLInputElement;
+      if (!courseElement.classList.contains('e-dropdownlist')) {
+        let dropDownListObject: DropDownList = new DropDownList({
+          placeholder: 'Choose course',
+          value: ((<{ [key: string]: Object }>(args.data)).Course as string),
           dataSource: this.dropDownCourse.slice(1),
-
           fields:
           {
             text: 'Name',
             value: 'Name'
           },
-          value: (args.data as { [key: string]: Object }).EventType as string,
-          floatLabelType: 'Auto',
-          placeholder: 'Course',
           allowFiltering: true,
-          filterBarPlaceholder: 'Search',
-
+          filterBarPlaceholder: 'Search'
         });
-
-        this.drowDownListCourses.appendTo(inputEle);
-        inputEle.setAttribute('name', 'courseName');
+        dropDownListObject.appendTo(courseElement);
       }
-      
-      
+      let startElement: HTMLInputElement = args.element.querySelector('#StartTime') as HTMLInputElement;
+      if (!startElement.classList.contains('e-datetimepicker')) {
+        startElement.value = (<{ [key: string]: Object }>(args.data)).StartTime as string;
+        new DateTimePicker({ value: new Date(startElement.value) || new Date() }, startElement);
+      }
+      let endElement: HTMLInputElement = args.element.querySelector('#EndTime') as HTMLInputElement;
+      if (!endElement.classList.contains('e-datetimepicker')) {
+        endElement.value = (<{ [key: string]: Object }>(args.data)).EndTime as string;
+        new DateTimePicker({ value: new Date(endElement.value) || new Date() }, endElement);
+      }
     }
+  }
+  onPopupClose(args: PopupCloseEventArgs): void {
+    if (args.type === 'Editor' && !isNullOrUndefined(args.data)) {
+      //Subject
+      let subjectElement: HTMLInputElement = args.element.querySelector('#Subject') as HTMLInputElement;
+      if (subjectElement) {
+        (<{ [key: string]: Object }>(args.data)).Subject = subjectElement.value;
+      }
+      //Teacher
+      let teacherElement: HTMLInputElement = args.element.querySelector('#Teacher') as HTMLInputElement;
+      if (teacherElement) {
+        ((<{ [key: string]: Object }>(args.data)).Teacher as string) = teacherElement.value;
+      }
+      //Classroom
+      let classroomElement: HTMLInputElement = args.element.querySelector('#Classroom') as HTMLInputElement;
+      if (classroomElement) {
+        ((<{ [key: string]: Object }>(args.data)).Classroom as string) = classroomElement.value;
+      }
+      //Course
+      let courseElement: HTMLInputElement = args.element.querySelector('#Course') as HTMLInputElement;
+      if (courseElement) {
+        ((<{ [key: string]: Object }>(args.data)).Course as string) = courseElement.value;
+      }
+      let startElement: HTMLInputElement = args.element.querySelector('#StartTime') as HTMLInputElement;
+      if (startElement) {
+        (<{ [key: string]: Object }>(args.data)).StartTime = startElement.value;
+      }
+      let endElement: HTMLInputElement = args.element.querySelector('#EndTime') as HTMLInputElement;
+      if (endElement) {
+        (<{ [key: string]: Object }>(args.data)).EndTime = endElement.value;
+      }
+    }
+    console.log(this.eventSettings);
   }
 }

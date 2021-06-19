@@ -1,6 +1,8 @@
 {
   "compileOnSave": true,
   "compilerOptions": {
+    "experimentalDecorators": true,
+    "allowJs": true,
     "skipLibCheck": true,
     "baseUrl": "./",
     "module": "esnext",
@@ -9,7 +11,6 @@
     "declaration": false,
     "moduleResolution": "node",
     "emitDecoratorMetadata": true,
-    "experimentalDecorators": true,
     "target": "es2015",
     "typeRoots": [
       "node_modules/@types"
