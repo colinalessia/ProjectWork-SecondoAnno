@@ -78,7 +78,7 @@ export class AddClassDataComponent implements OnInit{
   public drowDownListCourses: DropDownList;
   public drowDownListClassrooms: DropDownList;
 
-  @ViewChild('scheduleObj')
+  @ViewChild('scheduleObj', { static: true })
   public scheduleObj: ScheduleComponent;
 
   public data: object[] = [{

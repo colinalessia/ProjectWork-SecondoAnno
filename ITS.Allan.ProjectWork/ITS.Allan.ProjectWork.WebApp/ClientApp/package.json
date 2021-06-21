@@ -24,6 +24,7 @@
     "@angular/platform-server": "8.2.12",
     "@angular/router": "8.2.12",
     "@nguniversal/module-map-ngfactory-loader": "8.1.1",
+    "@syncfusion/ej2-angular-buttons": "^19.1.63",
     "@syncfusion/ej2-angular-calendars": "^19.1.66",
     "@syncfusion/ej2-angular-dropdowns": "^19.1.69",
     "@syncfusion/ej2-angular-schedule": "^19.1.69",
