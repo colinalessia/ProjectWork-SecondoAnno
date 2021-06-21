@@ -33,7 +33,7 @@ export class AddClassDataFormComponent implements OnInit {
 
   constructor(
     public fb: FormBuilder,
-    private classService: LessonService,
+    private lessonService: LessonService,
     private teacherService: TeacherService,
     private subjectService: SubjectService,
     private classroomService: ClassroomService,
@@ -76,18 +76,18 @@ export class AddClassDataFormComponent implements OnInit {
   }
 
   submit() {
-    var _class = new Lesson();
+    var lesson = new Lesson();
 
-    _class.idTeacher = this.form.get('teachers').value;
-    _class.idSubject = this.form.get('subjects').value;
-    _class.idClassroom = this.form.get('classrooms').value;
-    _class.idCourse = this.form.get('courses').value;
+    lesson.idTeacher = this.form.get('teachers').value;
+    lesson.idSubject = this.form.get('subjects').value;
+    lesson.idClassroom = this.form.get('classrooms').value;
+    lesson.idCourse = this.form.get('courses').value;
 
     //to do implementare per inserire le date
-    _class.startTime = new Date("1/19/2016 11:47:52 AM");
-    _class.endTime = new Date("1/19/2016 11:47:52 PM");
+    lesson.startTime = new Date("1/19/2016 11:47:52 AM");
+    lesson.endTime = new Date("1/19/2016 11:47:52 PM");
 
-    this.classService.save(_class).subscribe(
+    this.lessonService.save(lesson).subscribe(
       (response) => console.log(response),
       (error) => console.log(error)
     )

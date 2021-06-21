@@ -1,10 +1,10 @@
 //modules
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
 import { DropDownList } from '@syncfusion/ej2-dropdowns';
 import { DateTimePicker } from '@syncfusion/ej2-calendars';
 import {
   EventSettingsModel, ScheduleComponent, EventRenderedArgs, DayService, WeekService,
-  WorkWeekService, MonthService, AgendaService, PopupOpenEventArgs, ResizeService, DragAndDropService, PopupCloseEventArgs
+  WorkWeekService, MonthService, AgendaService, PopupOpenEventArgs, ResizeService, DragAndDropService, PopupCloseEventArgs, ActionEventArgs, Timezone
 } from '@syncfusion/ej2-angular-schedule';
 import { L10n } from '@syncfusion/ej2-base';
 
@@ -58,6 +58,9 @@ export class AddClassDataComponent implements OnInit{
   public dropDownSubject: { [key: string]: Object }[] = [
     { Name: '', Id: '' }
   ];
+  public dropDownSubject2: { [key: string]: Object }[] = [
+    { Name: '', Id: '' }
+  ];
   public dropDownClassroom: { [key: string]: Object }[] = [
     { Name: '', Id: '' }
   ];
@@ -67,8 +70,7 @@ export class AddClassDataComponent implements OnInit{
   public selectedDate: Date = new Date(2021, 6, 19);
   public views: Array<string> = ['Day', 'Week', 'WorkWeek', 'Month'];
   public eventSettings: EventSettingsModel;
-  //@ViewChild('scheduleObj')
-  public scheduleObj: ScheduleComponent;
+
   public showQuickInfo: Boolean = false
 
   public drowDownListTeachers: DropDownList;
@@ -76,15 +78,21 @@ export class AddClassDataComponent implements OnInit{
   public drowDownListCourses: DropDownList;
   public drowDownListClassrooms: DropDownList;
 
+  @ViewChild('scheduleObj')
+  public scheduleObj: ScheduleComponent;
 
   public data: object[] = [{
-    Id: 1,
-    Subject: "Inglese Tecnico",
-    Teacher: "Andrea Dottor",
-    Classroom: "S0",
-    Course: "Industrial Internet of Things Developer 2",
-    StartTime: "7/20/2021 10:00 AM",
-    EndTime: "7/20/2021 10:00 AM",
+    IdLesson: 0,
+    IdSubject: 0,
+    IdTeacher: 0,
+    IdClassroom: 0,
+    IdCourse: 0,
+    Subject: "",
+    Teacher: "",
+    Classroom: "",
+    Course: "",
+    StartTime: "",
+    EndTime: "",
   }];
 
 
@@ -97,7 +105,7 @@ export class AddClassDataComponent implements OnInit{
 
 
   }
-  ngOnInit() {
+ngOnInit() {
 
     this.lessonService.getAll().subscribe(res => {
       this.lessons = res;
@@ -118,6 +126,10 @@ export class AddClassDataComponent implements OnInit{
 
                 this.data.push({
                   Id: lesson.idLesson,
+                  IdSubject: lesson.idSubject,
+                  IdTeacher: lesson.idTeacher,
+                  IdClassroom: lesson.idClassroom,
+                  IdCourse: lesson.idCourse,
                   Subject: lesson.subjectName,
                   Teacher: lesson.teacherName,
                   Classroom: lesson.classroomName,
@@ -137,19 +149,21 @@ export class AddClassDataComponent implements OnInit{
     });
     this.teacherService.getAll().subscribe(data => {
       this.teachers = data;
-
       for (let teacher of this.teachers) {
         this.dropDownTeacher.push({
           Name: teacher.firstName + " " + teacher.lastName, Id: teacher.idTeacher.toString()
         });
       }
 
+
     });
+
 
     this.subjectService.getAll().subscribe(data => {
       this.subjects = data;
 
       for (let subject of this.subjects) {
+
         this.dropDownSubject.push({
           Name: subject.subjectName, Id: subject.idSubject.toString()
         });
@@ -180,6 +194,193 @@ export class AddClassDataComponent implements OnInit{
     });
         
   }
+  onActionBegin(args: ActionEventArgs): void {
+    if (args.requestType === "eventCreate") {
+      let subjectId, teacherId, classroomId, courseId;
+
+      //SUBJECT
+
+      let subjectElement = document.querySelector('#Subject') as HTMLInputElement;
+        console.log("subject name: " + subjectElement.value);
+        subjectId = this.dropDownSubject.find(subject => subject.Name === subjectElement.value).Id;
+        console.log("subject id: " + subjectId);
+
+
+        //TEACHER
+      let teacherElement = document.querySelector('#Teacher') as HTMLInputElement;
+        console.log("teacher name: " + teacherElement.value);
+        teacherId = this.dropDownTeacher.find(teacher => teacher.Name === teacherElement.value).Id;
+        console.log("teacher id: " + teacherId);
+
+
+        //CLASSROOM
+      let classroomElement = document.querySelector('#Classroom') as HTMLInputElement;
+        console.log("classroom name: " + classroomElement.value);
+        classroomId = this.dropDownClassroom.find(classroom => classroom.Name === classroomElement.value).Id;
+        console.log("classroom id: " + classroomId);
+
+
+        //COURSE
+      let courseElement = document.querySelector('#Course') as HTMLInputElement;
+        console.log("course name: " + courseElement.value);
+        courseId = this.dropDownCourse.find(course => course.Name === courseElement.value).Id;
+        console.log("course id: " + courseId);
+
+
+      let startElement: HTMLInputElement = document.querySelector('#StartTime') as HTMLInputElement;
+      let endElement: HTMLInputElement = document.querySelector('#EndTime') as HTMLInputElement;
+
+        console.log("start time: " + startElement.value);
+        console.log("end time: " + endElement.value);
+
+
+        let timezone: Timezone = new Timezone();
+
+        let newStartDate = new Date(startElement.value);
+        let startDate = timezone.removeLocalOffset(newStartDate);
+
+        let newEndDate = new Date(endElement.value);
+        let EndDate = timezone.removeLocalOffset(newEndDate);
+
+        let lesson = new Lesson();
+
+        lesson.idSubject = subjectId;
+        lesson.idTeacher = teacherId;
+        lesson.idClassroom = classroomId;
+        lesson.idCourse = courseId;
+
+        lesson.startTime = new Date(startDate);
+        lesson.endTime = new Date(EndDate);
+
+
+        this.lessonService.save(lesson).subscribe(
+          (response) => console.log(response),
+          (error) => console.log(error)
+        )
+      
+    }
+
+
+
+    if (args.requestType === "eventChange") {
+      console.log("This will triggered after edit the appointments.");
+      console.log("It will triggered when new event is rendered on the scheduler user interface.");
+
+      console.log("This will triggered after edit the appointments.");
+      console.log("records:" + args.changedRecords);
+      console.log("data:" + args.data);
+      console.log("items:" + args.items);
+      console.log("name:" + args.name);
+
+
+
+      let lesson = new Lesson();
+
+      for (let data of args.changedRecords) {
+        lesson.idLesson = data.Id;
+        /*lesson.idLesson = data.Id;
+        lesson.idSubject = data.IdSubject;
+        lesson.idTeacher = data.IdTeacher;
+        lesson.idClassroom = data.IdClassroom;
+        lesson.idCourse = data.IdCourse;
+
+        lesson.startTime = data.StartTime;
+        lesson.endTime = data.EndTime;
+
+        console.log("---")
+        console.log("lesson:" + lesson.idLesson);
+        console.log("subject:" + lesson.idSubject);
+        console.log("teacher:" + lesson.idTeacher);
+        console.log("classroom:" + lesson.idClassroom);
+        console.log("course:" + lesson.idCourse);
+        console.log("startTime:" + lesson.startTime);
+        console.log("endTime:" + lesson.endTime);*/
+
+      }
+
+      let subjectId, teacherId, classroomId, courseId;
+
+      //SUBJECT
+
+      let subjectElement = document.querySelector('#Subject') as HTMLInputElement;
+      console.log("subject name: " + subjectElement.value);
+      subjectId = this.dropDownSubject.find(subject => subject.Name === subjectElement.value).Id;
+      console.log("subject id: " + subjectId);
+
+
+      //TEACHER
+      let teacherElement = document.querySelector('#Teacher') as HTMLInputElement;
+      console.log("teacher name: " + teacherElement.value);
+      teacherId = this.dropDownTeacher.find(teacher => teacher.Name === teacherElement.value).Id;
+      console.log("teacher id: " + teacherId);
+
+
+      //CLASSROOM
+      let classroomElement = document.querySelector('#Classroom') as HTMLInputElement;
+      console.log("classroom name: " + classroomElement.value);
+      classroomId = this.dropDownClassroom.find(classroom => classroom.Name === classroomElement.value).Id;
+      console.log("classroom id: " + classroomId);
+
+
+      //COURSE
+      let courseElement = document.querySelector('#Course') as HTMLInputElement;
+      console.log("course name: " + courseElement.value);
+      courseId = this.dropDownCourse.find(course => course.Name === courseElement.value).Id;
+      console.log("course id: " + courseId);
+
+
+      let startElement: HTMLInputElement = document.querySelector('#StartTime') as HTMLInputElement;
+      let endElement: HTMLInputElement = document.querySelector('#EndTime') as HTMLInputElement;
+
+      console.log("start time: " + startElement.value);
+      console.log("end time: " + endElement.value);
+
+
+      let timezone: Timezone = new Timezone();
+
+      let newStartDate = new Date(startElement.value);
+      let startDate = timezone.removeLocalOffset(newStartDate);
+
+      let newEndDate = new Date(endElement.value);
+      let EndDate = timezone.removeLocalOffset(newEndDate);
+
+      lesson.idSubject = subjectId;
+      lesson.idTeacher = teacherId;
+      lesson.idClassroom = classroomId;
+      lesson.idCourse = courseId;
+
+      lesson.startTime = new Date(startDate);
+      lesson.endTime = new Date(EndDate);
+
+
+      this.lessonService.save(lesson).subscribe(
+        (response) => console.log(response),
+        (error) => console.log(error)
+      )
+    }
+    if (args.requestType === "eventRemove") {
+      console.log("This will triggered after delete the appointments");
+      console.log("It will triggered when new event is rendered on the scheduler user interface.");
+
+      console.log("This will triggered after edit the appointments.");
+      console.log("records:" + args.deletedRecords);
+      console.log("data:" + args.data);
+      console.log("items:" + args.items);
+      console.log("name:" + args.name);
+
+      let id;
+
+      for (let data of args.deletedRecords) {
+        console.log(data);
+        id = data.Id;
+      }
+
+      this.lessonService.remove(id).subscribe(
+        (response) => console.log(response),
+        (error) => console.log(error)
+      )
+    }
+  }
       
   onPopupOpen(args: PopupOpenEventArgs): void {
     if (args.type === 'Editor') {
@@ -187,12 +388,15 @@ export class AddClassDataComponent implements OnInit{
       let subjectElement: HTMLInputElement = args.element.querySelector('#Subject') as HTMLInputElement;
       
       if (!subjectElement.classList.contains('e-dropdownlist')) {
+        console.log(this.dropDownSubject.slice(1));
         let dropDownListObject: DropDownList = new DropDownList({
           placeholder: 'Choose subject',
           value: ((<{ [key: string]: Object }>(args.data)).Subject as string),
           dataSource: this.dropDownSubject.slice(1),
+          
           fields:
           {
+
             text: 'Name',
             value: 'Name'
           },
@@ -239,6 +443,7 @@ export class AddClassDataComponent implements OnInit{
       let courseElement: HTMLInputElement = args.element.querySelector('#Course') as HTMLInputElement;
       if (!courseElement.classList.contains('e-dropdownlist')) {
         let dropDownListObject: DropDownList = new DropDownList({
+          
           placeholder: 'Choose course',
           value: ((<{ [key: string]: Object }>(args.data)).Course as string),
           dataSource: this.dropDownCourse.slice(1),
@@ -265,6 +470,7 @@ export class AddClassDataComponent implements OnInit{
     }
   }
   onPopupClose(args: PopupCloseEventArgs): void {
+
     if (args.type === 'Editor' && !isNullOrUndefined(args.data)) {
       //Subject
       let subjectElement: HTMLInputElement = args.element.querySelector('#Subject') as HTMLInputElement;
@@ -295,6 +501,5 @@ export class AddClassDataComponent implements OnInit{
         (<{ [key: string]: Object }>(args.data)).EndTime = endElement.value;
       }
     }
-    console.log(this.eventSettings);
   }
 }

@@ -19,15 +19,15 @@ export default class LessonService {
     return this.http.get<Lesson>(`${this.lessonUrl}/${id}`);
   }
 
-  save(_class: Lesson): Observable<Lesson> {
+  save(lesson: Lesson): Observable<Lesson> {
     let result: Observable<Lesson>;
-    if (_class.idLesson) {
+    if (lesson.idLesson) {
       result = this.http.put<Lesson>(
-        `${this.lessonUrl}/${_class.idLesson}`,
-        _class
+        `${this.lessonUrl}/${lesson.idLesson}`,
+        lesson
       );
     } else {
-      result = this.http.post<Lesson>(this.lessonUrl, _class);
+      result = this.http.post<Lesson>(this.lessonUrl, lesson);
     }
     return result;
   }

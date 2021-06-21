@@ -39,14 +39,14 @@
 </div>-->
 
 
-<ejs-schedule width='100%' height='550px' [selectedDate]='selectedDate' [views]='views' [eventSettings]='eventSettings' [showQuickInfo]='showQuickInfo' (popupOpen)='onPopupOpen($event)' (popupClose)='onPopupClose($event)'>
+<ejs-schedule #scheduleObj width='100%' height='550px' [selectedDate]='selectedDate' [views]='views' [eventSettings]='eventSettings' [showQuickInfo]='showQuickInfo' (popupOpen)='onPopupOpen($event)' (popupClose)='onPopupClose($event)' (actionBegin)='onActionBegin($event)'>
   <ng-template #editorTemplate>
     <table class="custom-event-editor" width="100%" cellpadding="5">
       <tbody>
         <tr>
           <td class="e-textlabel">Subject</td>
           <td colspan="4">
-            <input id="Subject" name="Subject" type="text" style="width: 100%" />
+            <input id="Subject" name="Subject" type="text" style="width: 100%"/>
           </td>
         </tr>
         <tr>
