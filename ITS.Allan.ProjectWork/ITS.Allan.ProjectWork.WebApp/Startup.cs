@@ -37,6 +37,7 @@ namespace ITS.Allan.ProjectWork.WebApp
                 configuration.RootPath = "ClientApp/dist";
             });
             services.AddScoped<DbContext, UniBookContext>();
+            services.AddScoped<ILessonRepository, LessonRepository>();
 
         }
 

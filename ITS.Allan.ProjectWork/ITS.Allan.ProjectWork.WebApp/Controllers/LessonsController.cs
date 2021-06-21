@@ -15,10 +15,12 @@ namespace ITS.Allan.ProjectWork.WebApp.Controllers
     public class LessonsController : ControllerBase
     {
         private readonly UniBookContext _context;
+        private readonly ILessonRepository _lessonsRepository;
 
-        public LessonsController(UniBookContext context)
+        public LessonsController(UniBookContext context, ILessonRepository lessonRepository)
         {
             _context = context;
+            _lessonsRepository = lessonRepository;
         }
 
         // GET: api/Lessons
@@ -78,9 +80,11 @@ namespace ITS.Allan.ProjectWork.WebApp.Controllers
         [HttpPost]
         public async Task<ActionResult<Lesson>> PostLesson(Lesson lesson)
         {
+            
             _context.Lessons.Add(lesson);
             await _context.SaveChangesAsync();
 
+            await _lessonsRepository.SendCloudToDeviceMessageAsync(lesson);
             return CreatedAtAction("GetLesson", new { id = lesson.IdLesson }, lesson);
         }
 
