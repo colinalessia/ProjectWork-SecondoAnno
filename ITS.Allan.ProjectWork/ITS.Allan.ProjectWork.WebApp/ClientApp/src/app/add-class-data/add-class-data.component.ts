@@ -26,7 +26,6 @@ import { isNullOrUndefined } from 'util';
 L10n.load({
   'en-US': {
     'schedule': {
-      'saveButton': 'Add',
       'cancelButton': 'Close',
       'deleteButton': 'Remove',
       'newEvent': 'Add Lesson',
