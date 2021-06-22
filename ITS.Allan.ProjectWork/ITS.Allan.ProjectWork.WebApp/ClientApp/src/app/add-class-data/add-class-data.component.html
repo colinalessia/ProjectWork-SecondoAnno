@@ -1,52 +1,16 @@
-<!--<p>This component adds class data to database.</p>
-<form [formGroup]="form">
-  <select formControlName="teachers">
-    <option *ngFor="let teacher of teachers" [ngValue]="teacher.idTeacher">
-      {{ teacher.lastName}}
-    </option>
-  </select>
-  <select formControlName="subjects">
-    <option *ngFor="let subject of subjects" [ngValue]="subject.idSubject">
-      {{ subject.subjectName}}
-    </option>
-  </select>
-  <select formControlName="classrooms">
-    <option *ngFor="let classroom of classrooms" [ngValue]="classroom.idClassroom">
-      {{ classroom.classroomName}}
-    </option>
-  </select>
-  <select formControlName="courses">
-    <option *ngFor="let course of courses" [ngValue]="course.idCourse">
-      {{ course.courseName}}
-    </option>
-  </select>
-  <button class="btn btn-primary" (click)="submit()">Save</button>
-</form>
-
-<div class="toggle-example">
-  <input [ngxTimepicker]="toggleTimepicker" [disableClick]="true" readonly>
-  <ngx-material-timepicker-toggle [for]="toggleTimepicker"></ngx-material-timepicker-toggle>
-  <ngx-material-timepicker #toggleTimepicker></ngx-material-timepicker>
-</div>
-<div class="toggle-example">
-  <ngx-material-timepicker-toggle [for]="toggleTimepicker"></ngx-material-timepicker-toggle>
-  <ngx-material-timepicker #toggleTimepicker></ngx-material-timepicker>
-</div>-->
-
-<!--<div class="control-section">
-  <ejs-schedule #scheduleObj width='100%' height='550px' [selectedDate]='selectedDate' [views]='views'
-                [eventSettings]='eventSettings' [showQuickInfo]="showQuickInfo" (popupOpen)='onPopupOpen($event)'></ejs-schedule>
-</div>-->
-
-
-<ejs-schedule #scheduleObj width='100%' height='550px' [selectedDate]='selectedDate' [views]='views' [eventSettings]='eventSettings' [showQuickInfo]='showQuickInfo' (popupOpen)='onPopupOpen($event)' (popupClose)='onPopupClose($event)' (actionBegin)='onActionBegin($event)'>
+<ejs-schedule #scheduleObj width="100%" height="550px" [views]="views"
+              [eventSettings]="eventSettings" [showQuickInfo]="showQuickInfo" (popupOpen)="onPopupOpen($event)" [currentView]="currentView"
+              (popupClose)="onPopupClose($event)" (actionBegin)="onActionBegin($event)"
+              (renderCell)="onRenderCell($event)"
+              startHour="09:00" endHour="18:00"
+              (dataBound)="onDataBound($event)">
   <ng-template #editorTemplate>
     <table class="custom-event-editor" width="100%" cellpadding="5">
       <tbody>
         <tr>
           <td class="e-textlabel">Subject</td>
           <td colspan="4">
-            <input id="Subject" name="Subject" type="text" style="width: 100%"/>
+            <input id="Subject" name="Subject" type="text" style="width: 100%" />
           </td>
         </tr>
         <tr>
@@ -83,5 +47,8 @@
         </tr>
       </tbody>
     </table>
+  </ng-template>
+  <ng-template #cellTemplate let-data>
+    <div class="e-templatewrap" [innerHTML]="isBreak(data.date)"></div>
   </ng-template>
 </ejs-schedule>

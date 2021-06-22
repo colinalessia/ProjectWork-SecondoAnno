@@ -4,7 +4,7 @@ import { DropDownList } from '@syncfusion/ej2-dropdowns';
 import { DateTimePicker } from '@syncfusion/ej2-calendars';
 import {
   EventSettingsModel, ScheduleComponent, EventRenderedArgs, DayService, WeekService,
-  WorkWeekService, MonthService, AgendaService, PopupOpenEventArgs, ResizeService, DragAndDropService, PopupCloseEventArgs, ActionEventArgs, Timezone
+  WorkWeekService, MonthService, AgendaService, PopupOpenEventArgs, ResizeService, DragAndDropService, PopupCloseEventArgs, ActionEventArgs, Timezone, RenderCellEventArgs, View
 } from '@syncfusion/ej2-angular-schedule';
 import { L10n } from '@syncfusion/ej2-base';
 
@@ -67,16 +67,20 @@ export class AddClassDataComponent implements OnInit{
   public dropDownCourse: { [key: string]: Object }[] = [
     { Name: '', Id: '' }
   ];
-  public selectedDate: Date = new Date(2021, 6, 19);
+  public currentDate = new Date();
+  public selectedDate: Date = new Date(this.currentDate.getFullYear(), this.currentDate.getMonth(), this.currentDate.getDay());
   public views: Array<string> = ['Day', 'Week', 'WorkWeek', 'Month'];
   public eventSettings: EventSettingsModel;
-
+  public currentView: View = 'WorkWeek';
   public showQuickInfo: Boolean = false
 
   public drowDownListTeachers: DropDownList;
   public drowDownListSubjects: DropDownList;
   public drowDownListCourses: DropDownList;
   public drowDownListClassrooms: DropDownList;
+
+  // Flag variable to set up the delay to the schedule tooltip
+  public isTootipDelayApplied: boolean = false;
 
   @ViewChild('scheduleObj', { static: true })
   public scheduleObj: ScheduleComponent;
@@ -139,7 +143,8 @@ ngOnInit() {
                 })
 
                 this.eventSettings = {
-                  dataSource: this.data.slice(1)
+                  dataSource: this.data.slice(1),
+                  enableTooltip: true 
                 };
               });
             });
@@ -193,7 +198,36 @@ ngOnInit() {
 
     });
         
+}
+  //BREAK TIME
+  public onRenderCell(args: RenderCellEventArgs) {
+    if (args.elementType === 'workCells' && args.date.getHours() === 13) {
+      args.element.classList.add('e-lunch-hours');
+    }
   }
+
+  public isBreak(date: Date) {
+    if (date.getHours() === 13) {
+      return '<div class="e-break">Break Time</div>';
+    }
+  }
+
+  //TOOLTIP
+  // Set base values for Tooltip at moment of creation
+  onDataBound() {
+    if (!this.isTootipDelayApplied) {
+      let tooltipObj = (this.scheduleObj.element as any).ej2_instances[2];
+      // Disable the tooltip to follow the mouse pointer position
+      tooltipObj.mouseTrail = false;
+      // Setting tooltip open delay
+      tooltipObj.openDelay = 1000;
+      // Setting the position to the tooltip
+      tooltipObj.position = "TopCenter";
+      this.isTootipDelayApplied = true;
+    }
+  }
+
+
   onActionBegin(args: ActionEventArgs): void {
     if (args.requestType === "eventCreate") {
       let subjectId, teacherId, classroomId, courseId;
@@ -278,24 +312,6 @@ ngOnInit() {
 
       for (let data of args.changedRecords) {
         lesson.idLesson = data.Id;
-        /*lesson.idLesson = data.Id;
-        lesson.idSubject = data.IdSubject;
-        lesson.idTeacher = data.IdTeacher;
-        lesson.idClassroom = data.IdClassroom;
-        lesson.idCourse = data.IdCourse;
-
-        lesson.startTime = data.StartTime;
-        lesson.endTime = data.EndTime;
-
-        console.log("---")
-        console.log("lesson:" + lesson.idLesson);
-        console.log("subject:" + lesson.idSubject);
-        console.log("teacher:" + lesson.idTeacher);
-        console.log("classroom:" + lesson.idClassroom);
-        console.log("course:" + lesson.idCourse);
-        console.log("startTime:" + lesson.startTime);
-        console.log("endTime:" + lesson.endTime);*/
-
       }
 
       let subjectId, teacherId, classroomId, courseId;
