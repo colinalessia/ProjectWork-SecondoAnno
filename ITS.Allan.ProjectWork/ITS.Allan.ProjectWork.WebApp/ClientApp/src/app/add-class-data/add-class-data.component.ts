@@ -6,7 +6,7 @@ import {
   EventSettingsModel, ScheduleComponent, EventRenderedArgs, DayService, WeekService,
   WorkWeekService, MonthService, AgendaService, PopupOpenEventArgs, ResizeService, DragAndDropService, PopupCloseEventArgs, ActionEventArgs, Timezone, RenderCellEventArgs, View
 } from '@syncfusion/ej2-angular-schedule';
-import { L10n } from '@syncfusion/ej2-base';
+import { L10n, Internationalization } from '@syncfusion/ej2-base';
 
 //models
 import Lesson from '../shared/models/Lesson';
@@ -71,7 +71,7 @@ export class AddClassDataComponent implements OnInit{
   public views: Array<string> = ['Day', 'Week', 'WorkWeek', 'Month'];
   public eventSettings: EventSettingsModel;
   public currentView: View = 'WorkWeek';
-  public showQuickInfo: Boolean = false
+  public showQuickInfo: Boolean = false;
 
   public drowDownListTeachers: DropDownList;
   public drowDownListSubjects: DropDownList;
@@ -83,6 +83,9 @@ export class AddClassDataComponent implements OnInit{
 
   @ViewChild('scheduleObj', { static: true })
   public scheduleObj: ScheduleComponent;
+  public instance: Internationalization = new Internationalization();
+
+
 
   public data: object[] = [{
     IdLesson: 0,
@@ -143,7 +146,7 @@ ngOnInit() {
 
                 this.eventSettings = {
                   dataSource: this.data.slice(1),
-                  enableTooltip: true 
+                  enableTooltip: false 
                 };
               });
             });
@@ -198,6 +201,10 @@ ngOnInit() {
     });
         
 }
+  public getTimeString(value: Date): string {
+    return this.instance.formatDate(value, { skeleton: 'hm' });
+  }
+
   //BREAK TIME
   public onRenderCell(args: RenderCellEventArgs) {
     if (args.elementType === 'workCells' && args.date.getHours() === 13) {
@@ -213,7 +220,7 @@ ngOnInit() {
 
   //TOOLTIP
   // Set base values for Tooltip at moment of creation
-  onDataBound() {
+/*  onDataBound() {
     if (!this.isTootipDelayApplied) {
       let tooltipObj = (this.scheduleObj.element as any).ej2_instances[2];
       // Disable the tooltip to follow the mouse pointer position
@@ -224,7 +231,7 @@ ngOnInit() {
       tooltipObj.position = "TopCenter";
       this.isTootipDelayApplied = true;
     }
-  }
+  }*/
 
 
   onActionBegin(args: ActionEventArgs): void {
