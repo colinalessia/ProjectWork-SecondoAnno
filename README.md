@@ -5,8 +5,11 @@
 # Indice
 
 - [Membri](#membri)
-- [Calendar](#calendar)
-- [ER Diagram](#er-diagram)
+- [Librerie](#librerie)
+- [Calendario](#calendario)
+- [Popup per aggiungere lezioni](#popup-per-aggiungere-lezioni)
+- [Popup per modificare lezioni](#popup-per-modificare-lezioni)
+- [Diagramma ER](#diagramma-er)
 - [Link](#link)
 - [Licenza](#licenza)
 
@@ -29,13 +32,39 @@ Membri del gruppo:
 
 </br>
 
-# Calendar
+# Librerie
+
+Per gestire il calendario abbiamo utilizzato:
+
+- [Syncfusion Schedule](https://ej2.syncfusion.com/angular/documentation/schedule/getting-started/#adding-syncfusion-schedule-package)
+
+Per installare la libreria:
+
+```code
+npm install @syncfusion/ej2-angular-schedule --save
+```
+  
+</br>
+
+# Calendario
 
 ![](https://github.com/colinalessia/ProjectWork-SecondoAnno/blob/main/img/calendar.PNG)
 
 </br>
 
-# ER diagram
+# Popup per aggiungere lezioni
+
+![](https://github.com/colinalessia/ProjectWork-SecondoAnno/blob/main/img/add_lesson.PNG)
+
+</br>
+
+# Popup per modificare lezioni
+
+![](https://github.com/colinalessia/ProjectWork-SecondoAnno/blob/main/img/edit_lesson.PNG)
+
+</br>
+
+# Diagramma ER 
 
 ![](https://github.com/colinalessia/ProjectWork-SecondoAnno/blob/main/img/database_ER_diagram.PNG)
 

@@ -57,14 +57,11 @@ export class AddClassDataComponent implements OnInit{
   public dropDownSubject: { [key: string]: Object }[] = [
     { Name: '', Id: '' }
   ];
-  public dropDownSubject2: { [key: string]: Object }[] = [
-    { Name: '', Id: '' }
-  ];
   public dropDownClassroom: { [key: string]: Object }[] = [
     { Name: '', Id: '' }
   ];
   public dropDownCourse: { [key: string]: Object }[] = [
-    { Name: '', Id: '' }
+    { Name: '', Id: ''}
   ];
   public currentDate = new Date();
   public selectedDate: Date = new Date(this.currentDate.getFullYear(), this.currentDate.getMonth(), this.currentDate.getDay());
