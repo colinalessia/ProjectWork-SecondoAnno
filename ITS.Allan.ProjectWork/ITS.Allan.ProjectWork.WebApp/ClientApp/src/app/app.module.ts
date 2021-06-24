@@ -10,6 +10,7 @@ import { HomeComponent } from './home/home.component';
 import { DisplayClassDataComponent } from './display-class-data/display-class-data.component';
 import { AddClassDataComponent } from './add-class-data/add-class-data.component';
 import { AddClassDataFormComponent } from './add-class-data-form/add-class-data-form.component';
+import { DisplayScheduleReadOnly } from './display-schedule-read-only/display-schedule-read-only.component';
 
 import ClassService from './shared/services/lesson.service';
 import TeacherService from './shared/services/teacher.service';
@@ -36,7 +37,8 @@ import { ButtonModule } from '@syncfusion/ej2-angular-buttons';
     HomeComponent,
     AddClassDataComponent,
     DisplayClassDataComponent,
-    AddClassDataFormComponent
+    AddClassDataFormComponent,
+    DisplayScheduleReadOnly
   ],
 
   imports: [
@@ -56,6 +58,7 @@ import { ButtonModule } from '@syncfusion/ej2-angular-buttons';
       { path: 'add-class-data', component: AddClassDataComponent },
       { path: 'display-class-data', component: DisplayClassDataComponent },
       { path: 'add-class-data-form', component: AddClassDataFormComponent },
+      { path: 'display-schedule-read-only', component: DisplayScheduleReadOnly }
     ])
   ],
   providers: [ClassService, TeacherService, SubjectService, ClassroomService, CourseService],

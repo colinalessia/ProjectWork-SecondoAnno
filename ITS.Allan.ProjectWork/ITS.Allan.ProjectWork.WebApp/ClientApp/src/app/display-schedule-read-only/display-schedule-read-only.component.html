@@ -1,0 +1,22 @@
+<ejs-schedule #scheduleObj width="100%" height="550px" [views]="views"
+              [eventSettings]="eventSettings" [showQuickInfo]="showQuickInfo" [currentView]="currentView"
+              (renderCell)="onRenderCell($event)"
+              startHour="09:00" endHour="18:00"
+               [showTimeIndicator]=false
+              [readonly]="true">
+              <!--(dataBound)="onDataBound($event)">-->
+  <ng-template #cellTemplate let-data>
+    <div class="e-templatewrap" [innerHTML]="isBreak(data.date)"></div>
+  </ng-template>
+  <!--appointment customization-->
+  <ng-template #eventSettingsTemplate let-data>
+    <div class='template-wrap' [style.background]="data.PrimaryColor">
+      <div class="subject" [style.background]="data.PrimaryColor">{{data.Subject}}</div>
+      <div class="teacher" [style.background]="data.PrimaryColor">Teacher: {{data.Teacher}}</div>
+      <div class="classroom" [style.background]="data.PrimaryColor">Classroom: {{data.Classroom}}</div>
+      <div class="course" [style.background]="data.PrimaryColor">Course: {{data.Course}}</div>
+      <div class="startTime" [style.background]="data.PrimaryColor">Start Time: {{getTimeString(data.StartTime)}}</div>
+      <div class="endTime" [style.background]="data.PrimaryColor">End Time: {{getTimeString(data.EndTime)}}</div>  
+    </div>
+  </ng-template>
+</ejs-schedule>
