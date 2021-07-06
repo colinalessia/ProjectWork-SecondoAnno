@@ -1,0 +1,58 @@
+a.navbar-brand {
+  white-space: normal;
+  text-align: center;
+  word-break: break-all;
+}
+
+html {
+  font-size: 14px;
+}
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.box-shadow {
+  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+.e-schedule .e-timeline-view .e-resource-cells, .e-schedule .e-timeline-month-view .e-resource-cells .e-work-cells{
+  background-color: #fafafa;
+  border-color: rgba(0, 0, 0, 0.12);
+  border-style: solid;
+  border-width: 0 1px 1px 0;
+  color: rgba(0, 0, 0, 0.87);
+  height: 130px;
+  padding-right: 0;
+  vertical-align: middle;
+  text-align: center;
+}
+.e-schedule .e-timeline-view .e-work-cells, .e-schedule .e-timeline-month-view .e-work-cells {
+  height: 130px;
+}
+.e-schedule .e-timeline-view .e-appointment, .e-schedule .e-timeline-month-view .e-appointment {
+  background: #3f51b5;
+  border: 1px solid #e8eaf6;
+  border-radius: 2px;
+  color: #fff;
+  cursor: default;
+  display: flex;
+  height: 130px;
+  overflow: hidden;
+  position: absolute;
+}
+td.e-work-cells.e-work-hours.e-lunch-hours {
+  text-align: center;
+  background-color: gray !important;
+  pointer-events: none;
+}
+
+.e-break {
+  color: white;
+}
+
+.e-template-wrap {
+  height: 100%;
+  width: 100%;
+}
+

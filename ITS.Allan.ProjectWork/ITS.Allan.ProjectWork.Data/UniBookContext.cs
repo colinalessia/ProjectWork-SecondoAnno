@@ -17,6 +17,7 @@ namespace ITS.Allan.ProjectWork.Data
         public DbSet<Subject> Subjects { get; set; }
         public DbSet<Classroom> Classrooms { get; set; }
         public DbSet<Course> Courses { get; set; }
-        
+        public DbSet<Building> Buildings { get; set; }
+        public DbSet<Floor> Floors { get; set; }
     }
 }
