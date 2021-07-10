@@ -46,17 +46,26 @@ html {
   position: absolute;
 }
 
-td.e-work-cells.e-work-hours.e-lunch-hours {
+.e-lunch-hours {
   text-align: center;
   background-color: gray !important;
   pointer-events: none;
 }
 
 .e-break {
-  color: white;
+  color: #fafafa;
 }
 
 .e-template-wrap {
   height: 100%;
   width: 100%;
+}
+
+.e-schedule .e-timeline-view .e-resource-text, .e-schedule .e-timeline-month-view .e-resource-text {
+  margin-left: 0px !important;
+  padding-left: 0px !important;
+}
+
+.e-parent-node {
+  padding-right: 24px !important;
 }

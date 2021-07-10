@@ -27,6 +27,7 @@ import CourseService from '../shared/services/course.service';
 import LessonService from '../shared/services/lesson.service';
 import BuildingService from '../shared/services/building.service';
 import FloorService from '../shared/services/floor.service';
+import { DateTimePickerComponent } from '@syncfusion/ej2-angular-calendars';
 
 
 L10n.load({
@@ -66,6 +67,8 @@ export class DisplayClassDataComponent implements OnInit {
   @ViewChild('scheduleObj', { static: true })
   public scheduleObj: ScheduleComponent;
   public instance: Internationalization = new Internationalization();
+  @ViewChild('date', { static: true })
+  public myDate: DateTimePickerComponent;
 
   public timeScale: TimeScaleModel = {
     enable: true,
@@ -116,6 +119,7 @@ export class DisplayClassDataComponent implements OnInit {
   public allowMultiple: Boolean = false;
   public showQuickInfo: Boolean = false;
 
+  public enablePersistence: Boolean = true;
   constructor(
     private lessonService: LessonService,
     private teacherService: TeacherService,
@@ -128,7 +132,7 @@ export class DisplayClassDataComponent implements OnInit {
 
   }
   ngOnInit() {
-
+    console.log(this.selectedDate);
     this.lessonService.getAll().subscribe(res => {
       this.lessons = res;
 
@@ -281,43 +285,13 @@ export class DisplayClassDataComponent implements OnInit {
     }
   }
 
+
+
   //pop up open
   onPopupOpen(args: PopupOpenEventArgs): void {
     if (args.type === 'Editor') {
 
-
-      // Create required custom elements in initial time
-      if (!args.element.querySelector('.custom-field-row')) {
-        let row: HTMLElement = createElement('div', { className: 'custom-field-row' });
-        let formElement: HTMLElement = <HTMLElement>args.element.querySelector('.e-schedule-form');
-        formElement.firstChild.insertBefore(row, args.element.querySelector('.e-title-location-row'));
-        let container: HTMLElement = createElement('div', { className: 'custom-field-container' });
-        let inputEle: HTMLInputElement = createElement('input', {
-          id: 'Teacher',
-          className: 'e-field', attrs: { name: 'Teacher' }
-        }) as HTMLInputElement;
-        container.appendChild(inputEle);
-        row.appendChild(container);
-
-        this.drowDownListTeachers = new DropDownList({
-
-          dataSource: this.dropDownTeacher.slice(1),
-
-          fields:
-          {
-            text: 'Name',
-            value: 'Name'
-          },
-          value: (args.data as { [key: string]: Object }).Teacher as string,
-          floatLabelType: 'Auto',
-          placeholder: 'Teacher',
-          allowFiltering: true,
-          filterBarPlaceholder: 'Search',
-
-        });
-
-        this.drowDownListTeachers.appendTo(inputEle);
-      }
+      
       if (!args.element.querySelector('.custom-field-row1')) {
         let row: HTMLElement = createElement('div', { className: 'custom-field-row1' });
         let formElement: HTMLElement = <HTMLElement>args.element.querySelector('.e-schedule-form');
@@ -349,6 +323,39 @@ export class DisplayClassDataComponent implements OnInit {
         this.drowDownListSubjects.appendTo(inputEle);
       }
 
+      if (!args.element.querySelector('.custom-field-row2')) {
+        let row: HTMLElement = createElement('div', { className: 'custom-field-row2' });
+        let formElement: HTMLElement = <HTMLElement>args.element.querySelector('.e-schedule-form');
+        formElement.firstChild.insertBefore(row, args.element.querySelector('.e-title-location-row'));
+        let container: HTMLElement = createElement('div', { className: 'custom-field-container2' });
+        let inputEle: HTMLInputElement = createElement('input', {
+          id: 'Teacher',
+          className: 'e-field', attrs: { name: 'Teacher' }
+        }) as HTMLInputElement;
+        container.appendChild(inputEle);
+        row.appendChild(container);
+
+        this.drowDownListTeachers = new DropDownList({
+
+          dataSource: this.dropDownTeacher.slice(1),
+
+          fields:
+          {
+            text: 'Name',
+            value: 'Name'
+          },
+          value: (args.data as { [key: string]: Object }).Teacher as string,
+          floatLabelType: 'Auto',
+          placeholder: 'Teacher',
+          allowFiltering: true,
+          filterBarPlaceholder: 'Search',
+
+        });
+
+        this.drowDownListTeachers.appendTo(inputEle);
+      }
+      
+
       if (!args.element.querySelector('.custom-field-row3')) {
         let row: HTMLElement = createElement('div', { className: 'custom-field-row3' });
         let formElement: HTMLElement = <HTMLElement>args.element.querySelector('.e-schedule-form');
@@ -378,6 +385,8 @@ export class DisplayClassDataComponent implements OnInit {
 
         this.drowDownListCourses.appendTo(inputEle);
       }
+      (args.element.querySelector(".e-start") as any).ej2_instances[0].step = "60";
+      (args.element.querySelector(".e-end") as any).ej2_instances[0].step = "60";
     }
   }
   //pop up close
@@ -418,7 +427,7 @@ export class DisplayClassDataComponent implements OnInit {
       console.log(this.eventSettings);
     }
   }
-
+  
   //POST PUT DELETE FUNZIONANTI
   onActionBegin(args: ActionEventArgs): void {
 

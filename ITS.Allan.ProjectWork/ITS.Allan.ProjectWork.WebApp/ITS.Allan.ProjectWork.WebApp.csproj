@@ -30,8 +30,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Remove="ClientApp\src\app\display-schedule-read-only\data.ts" />
-    <None Remove="ClientApp\src\app\display-schedule-read-only\resource.ts" />
     <None Remove="ClientApp\src\app\shared\models\Building.ts" />
     <None Remove="ClientApp\src\app\shared\models\Floor.ts" />
     <None Remove="ClientApp\src\app\shared\models\Lesson.ts" />
@@ -57,8 +55,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <TypeScriptCompile Include="ClientApp\src\app\display-schedule-read-only\data.ts" />
-    <TypeScriptCompile Include="ClientApp\src\app\display-schedule-read-only\resource.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\shared\models\Building.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\shared\models\Floor.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\shared\services\floor.service.ts" />

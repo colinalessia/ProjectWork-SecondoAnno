@@ -5,10 +5,7 @@ import {
 } from '@syncfusion/ej2-angular-schedule';
 
 import { FormGroup } from '@angular/forms';
-import { createElement, extend } from '@syncfusion/ej2-base';
-import { DropDownList } from '@syncfusion/ej2-angular-dropdowns';
-import { isNullOrUndefined } from 'util';
-import { L10n, Internationalization } from '@syncfusion/ej2-base';
+import { Internationalization } from '@syncfusion/ej2-base';
 
 //models
 import Lesson from '../shared/models/Lesson';
@@ -94,6 +91,8 @@ export class DisplayScheduleReadOnly implements OnInit {
 
   public allowMultiple: Boolean = false;
   public showQuickInfo: Boolean = false;
+
+  public enablePersistence: Boolean = true;
 
   constructor(
     private lessonService: LessonService,
@@ -215,6 +214,7 @@ export class DisplayScheduleReadOnly implements OnInit {
   public onRenderCell(args: RenderCellEventArgs) {
     if (args.elementType === 'workCells' && args.date.getHours() === 13) {
       args.element.classList.add('e-lunch-hours');
+      return '<div class="e-break">Break Time</div>';
     }
   }
 

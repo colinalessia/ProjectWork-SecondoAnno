@@ -1,43 +1,36 @@
-<div class="control-section">
-  <div class="col-lg-9 content-wrapper">
 
-    <ejs-schedule *ngIf="buildingDataSource.length == 3 && classroomDataSource.length == 37"
-                  #scheduleObj width='1075px' cssClass='adaptive-rows' height='650px'
-                  [rowAutoHeight]='rowAutoHeight' [currentView]="currentView" [selectedDate]="selectedDate"
-                  [group]="group" [eventSettings]="eventSettings" (renderCell)="onRenderCell($event)"
-                  (eventRendered)="oneventRendered($event)"
-                  [showQuickInfo]="showQuickInfo" [showTimeIndicator]=false [timeScale]="timeScale"
-                  startHour="09:00" endHour="18:00"
-                  [readonly]="true">
-      <e-resources>
-        <e-resource field='Building' title='Building' [dataSource]='buildingDataSource' [allowMultiple]='allowMultiple' name='Buildings'
-                    textField='text' idField='id'>
-        </e-resource>
-        <e-resource field='Classroom' title='Classroom' [dataSource]='classroomDataSource' [allowMultiple]='allowMultiple' name='Classrooms'
-                    textField='text' idField='id' groupIDField='groupId'>
-        </e-resource>
-      </e-resources>
-      <e-views>
-        <e-view option="TimelineDay"></e-view>
-        <e-view option="TimelineWeek"></e-view>
-        <e-view option="TimelineWorkWeek"></e-view>
-        <e-view option="TimelineMonth"></e-view>
-        <e-view option="Agenda"></e-view>
-      </e-views>
 
-      <!--appointment customization-->
-      <ng-template #eventSettingsTemplate let-data>
-        <div class='template-wrap' [style.background]="data.PrimaryColor">
-          <div class="subject" [style.background]="data.PrimaryColor">{{data.Subject}}</div>
-          <div class="teacher" [style.background]="data.PrimaryColor">Teacher: {{data.Teacher}}</div>
-          <div class="course" [style.background]="data.PrimaryColor">Course: {{data.Course}}</div>
-          <div class="startTime" [style.background]="data.PrimaryColor">Start Time: {{getTimeString(data.StartTime)}}</div>
-          <div class="endTime" [style.background]="data.PrimaryColor">End Time: {{getTimeString(data.EndTime)}}</div>
-        </div>
-      </ng-template>
-      <ng-template #cellTemplate let-data>
-        <div class="e-templatewrap" [innerHTML]="isBreak(data.date)"></div>
-      </ng-template>
-    </ejs-schedule>
-  </div>
-</div>
+  <ejs-schedule *ngIf="buildingDataSource.length == 3 && classroomDataSource.length == 37"
+                #scheduleObj width='100%' height='600px' cssClass='adaptive-rows' [enablePersistence]="enablePersistence"
+                [selectedDate]="selectedDate"
+                [group]="group" [eventSettings]="eventSettings" (renderCell)="onRenderCell($event)"
+                (eventRendered)="oneventRendered($event)"
+                [showQuickInfo]="showQuickInfo" [showTimeIndicator]=false [timeScale]="timeScale"
+                startHour="09:00" endHour="18:00" [readonly]="true">
+    <e-resources>
+      <e-resource field='Building' title='Building' [dataSource]='buildingDataSource' [allowMultiple]='allowMultiple' name='Buildings'
+                  textField='text' idField='id'>
+      </e-resource>
+      <e-resource field='Classroom' title='Classroom' [dataSource]='classroomDataSource' [allowMultiple]='allowMultiple' name='Classrooms'
+                  textField='text' idField='id' groupIDField='groupId'>
+      </e-resource>
+    </e-resources>
+    <e-views>
+      <e-view option="TimelineDay"></e-view>
+      <e-view option="Agenda"></e-view>
+    </e-views>
+
+    <!--appointment customization-->
+    <ng-template #eventSettingsTemplate let-data>
+      <div class='template-wrap' [style.background]="data.PrimaryColor">
+        <div class="subject" [style.background]="data.PrimaryColor">{{data.Subject}}</div>
+        <div class="teacher" [style.background]="data.PrimaryColor">Teacher: {{data.Teacher}}</div>
+        <div class="course" [style.background]="data.PrimaryColor">Course: {{data.Course}}</div>
+        <div class="startTime" [style.background]="data.PrimaryColor">Start Time: {{getTimeString(data.StartTime)}}</div>
+        <div class="endTime" [style.background]="data.PrimaryColor">End Time: {{getTimeString(data.EndTime)}}</div>
+      </div>
+    </ng-template>
+    <ng-template #cellTemplate let-data>
+      <div class="e-templatewrap" [innerHTML]="isBreak(data.date)"></div>
+    </ng-template>
+  </ejs-schedule>
