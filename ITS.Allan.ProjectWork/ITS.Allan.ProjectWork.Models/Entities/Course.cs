@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace ITS.Allan.ProjectWork.Models
+namespace ITS.Allan.ProjectWork.Models.Entities
 {
     public class Course
     {

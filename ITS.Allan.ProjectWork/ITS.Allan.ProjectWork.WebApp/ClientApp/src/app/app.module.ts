@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { RouterModule } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 import { MatSliderModule } from '@angular/material/slider';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { NgxMaterialTimepickerModule } from 'ngx-material-timepicker';
@@ -18,7 +18,7 @@ import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { DisplayClassDataComponent } from './display-class-data/display-class-data.component';
 import { AddClassDataFormComponent } from './add-class-data-form/add-class-data-form.component';
 import { DisplayScheduleReadOnly } from './display-schedule-read-only/display-schedule-read-only.component';
-
+import { LoginComponent } from './login/login.component';
 //services
 import LessonService from './shared/services/lesson.service';
 import TeacherService from './shared/services/teacher.service';
@@ -27,6 +27,10 @@ import ClassroomService from './shared/services/classroom.service';
 import CourseService from './shared/services/course.service';
 import BuildingService from './shared/services/building.service';
 import FloorService from './shared/services/floor.service';
+import UserService from './shared/services/user.service';
+import AuthService from './shared/services/auth.service';
+import { AuthGuardService } from './shared/services/auth-guard.service';
+import { appRoutes } from './app.routes';
 
 
 @NgModule({
@@ -35,7 +39,8 @@ import FloorService from './shared/services/floor.service';
     NavMenuComponent,
     DisplayClassDataComponent,
     AddClassDataFormComponent,
-    DisplayScheduleReadOnly
+    DisplayScheduleReadOnly,
+    LoginComponent
   ],
 
   imports: [
@@ -52,13 +57,15 @@ import FloorService from './shared/services/floor.service';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    RouterModule.forRoot([
+    RouterModule.forRoot(appRoutes)
+    /*RouterModule.forRoot([
+      { path: 'login', component: LoginComponent },
       { path: '', component: DisplayClassDataComponent, pathMatch: 'full' },
       { path: 'add-class-data-form', component: AddClassDataFormComponent },
       { path: 'display-schedule-read-only', component: DisplayScheduleReadOnly }
-    ])
+    ])*/
   ],
-  providers: [LessonService, TeacherService, SubjectService, ClassroomService, CourseService, BuildingService, FloorService],
+  providers: [LessonService, TeacherService, SubjectService, ClassroomService, CourseService, BuildingService, FloorService, UserService, AuthService, AuthGuardService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

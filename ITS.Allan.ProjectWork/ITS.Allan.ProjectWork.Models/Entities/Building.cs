@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace ITS.Allan.ProjectWork.Models
+namespace ITS.Allan.ProjectWork.Models.Entities
 {
     //model for Building table
     public class Building

@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace ITS.Allan.ProjectWork.Models
+namespace ITS.Allan.ProjectWork.Models.Entities
 {
     //model for Campus table
     public class Campus

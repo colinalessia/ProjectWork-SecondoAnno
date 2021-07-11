@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using ITS.Allan.ProjectWork.Data;
-using ITS.Allan.ProjectWork.Models;
+using ITS.Allan.ProjectWork.Models.Entities;
 
 namespace ITS.Allan.ProjectWork.WebApp.Controllers
 {

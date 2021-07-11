@@ -30,9 +30,13 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="ClientApp\src\app\app.routes.ts" />
     <None Remove="ClientApp\src\app\shared\models\Building.ts" />
     <None Remove="ClientApp\src\app\shared\models\Floor.ts" />
     <None Remove="ClientApp\src\app\shared\models\Lesson.ts" />
+    <None Remove="ClientApp\src\app\shared\models\User.ts" />
+    <None Remove="ClientApp\src\app\shared\services\auth-guard.service.ts" />
+    <None Remove="ClientApp\src\app\shared\services\auth.service.ts" />
     <None Remove="ClientApp\src\app\shared\services\building.service.ts" />
     <None Remove="ClientApp\src\app\shared\services\class - Copy (2).service.ts" />
     <None Remove="ClientApp\src\app\shared\services\class - Copy (3).service.ts" />
@@ -47,6 +51,7 @@
     <None Remove="ClientApp\src\app\shared\models\Course.ts" />
     <None Remove="ClientApp\src\app\shared\models\Subject.ts" />
     <None Remove="ClientApp\src\app\shared\models\Teacher.ts" />
+    <None Remove="ClientApp\src\app\shared\services\user.service.ts" />
   </ItemGroup>
 
   <ItemGroup>
@@ -55,14 +60,25 @@
   </ItemGroup>
 
   <ItemGroup>
+    <TypeScriptCompile Include="ClientApp\src\app\app.routes.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\shared\models\Building.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\shared\models\Floor.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\shared\models\User.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\shared\services\auth-guard.service.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
     <TypeScriptCompile Include="ClientApp\src\app\shared\services\floor.service.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\shared\services\building.service.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\shared\services\classroom.service.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\shared\services\course.service.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\shared\services\lesson.service.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\shared\services\subject.service.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\shared\services\auth.service.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ClientApp\src\app\shared\services\user.service.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
     <TypeScriptCompile Include="ClientApp\src\app\shared\services\teacher.service.ts">
       <SubType>Code</SubType>
     </TypeScriptCompile>

@@ -1,4 +1,5 @@
 ﻿using ITS.Allan.ProjectWork.Models;
+using ITS.Allan.ProjectWork.Models.Entities;
 using Microsoft.Azure.Devices;
 using Microsoft.Extensions.Configuration;
 using System.Text;

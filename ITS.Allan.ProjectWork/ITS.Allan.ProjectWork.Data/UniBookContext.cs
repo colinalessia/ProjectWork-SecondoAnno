@@ -1,4 +1,4 @@
-﻿using ITS.Allan.ProjectWork.Models;
+﻿using ITS.Allan.ProjectWork.Models.Entities;
 using Microsoft.EntityFrameworkCore;
 using System;
 
@@ -19,5 +19,6 @@ namespace ITS.Allan.ProjectWork.Data
         public DbSet<Course> Courses { get; set; }
         public DbSet<Building> Buildings { get; set; }
         public DbSet<Floor> Floors { get; set; }
+        public DbSet<User> Users { get; set; }
     }
 }

@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
 
-namespace ITS.Allan.ProjectWork.Models
+namespace ITS.Allan.ProjectWork.Models.Entities
 {
     public class Device
     {

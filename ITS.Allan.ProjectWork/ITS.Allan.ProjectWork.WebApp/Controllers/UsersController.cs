@@ -12,47 +12,47 @@ namespace ITS.Allan.ProjectWork.WebApp.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class TeachersController : ControllerBase
+    public class UsersController : ControllerBase
     {
         private readonly UniBookContext _context;
 
-        public TeachersController(UniBookContext context)
+        public UsersController(UniBookContext context)
         {
             _context = context;
         }
 
-        // GET: api/Teachers
+        // GET: api/Users
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Teacher>>> GetTeachers()
+        public async Task<ActionResult<IEnumerable<User>>> GetUsers()
         {
-            return await _context.Teachers.ToListAsync();
+            return await _context.Users.ToListAsync();
         }
 
-        // GET: api/Teachers/5
+        // GET: api/Users/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Teacher>> GetTeacher(int id)
+        public async Task<ActionResult<User>> GetUser(int id)
         {
-            var teacher = await _context.Teachers.FindAsync(id);
+            var user = await _context.Users.FindAsync(id);
 
-            if (teacher == null)
+            if (user == null)
             {
                 return NotFound();
             }
 
-            return teacher;
+            return user;
         }
 
-        // PUT: api/Teachers/5
+        // PUT: api/Users/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutTeacher(int id, Teacher teacher)
+        public async Task<IActionResult> PutUser(int id, User user)
         {
-            if (id != teacher.IdTeacher)
+            if (id != user.IdUser)
             {
                 return BadRequest();
             }
 
-            _context.Entry(teacher).State = EntityState.Modified;
+            _context.Entry(user).State = EntityState.Modified;
 
             try
             {
@@ -60,7 +60,7 @@ namespace ITS.Allan.ProjectWork.WebApp.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!TeacherExists(id))
+                if (!UserExists(id))
                 {
                     return NotFound();
                 }
@@ -73,36 +73,36 @@ namespace ITS.Allan.ProjectWork.WebApp.Controllers
             return NoContent();
         }
 
-        // POST: api/Teachers
+        // POST: api/Users
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<ActionResult<Teacher>> PostTeacher(Teacher teacher)
+        public async Task<ActionResult<User>> PostUser(User user)
         {
-            _context.Teachers.Add(teacher);
+            _context.Users.Add(user);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetTeacher", new { id = teacher.IdTeacher }, teacher);
+            return CreatedAtAction("GetUser", new { id = user.IdUser }, user);
         }
 
-        // DELETE: api/Teachers/5
+        // DELETE: api/Users/5
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteTeacher(int id)
+        public async Task<IActionResult> DeleteUser(int id)
         {
-            var teacher = await _context.Teachers.FindAsync(id);
-            if (teacher == null)
+            var user = await _context.Users.FindAsync(id);
+            if (user == null)
             {
                 return NotFound();
             }
 
-            _context.Teachers.Remove(teacher);
+            _context.Users.Remove(user);
             await _context.SaveChangesAsync();
 
             return NoContent();
         }
 
-        private bool TeacherExists(int id)
+        private bool UserExists(int id)
         {
-            return _context.Teachers.Any(e => e.IdTeacher == id);
+            return _context.Users.Any(e => e.IdUser == id);
         }
     }
 }
