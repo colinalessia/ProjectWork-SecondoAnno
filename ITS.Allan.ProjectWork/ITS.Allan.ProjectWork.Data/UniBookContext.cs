@@ -20,5 +20,6 @@ namespace ITS.Allan.ProjectWork.Data
         public DbSet<Building> Buildings { get; set; }
         public DbSet<Floor> Floors { get; set; }
         public DbSet<User> Users { get; set; }
+        public DbSet<Device> Devices { get; set; }
     }
 }

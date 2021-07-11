@@ -23,5 +23,8 @@ namespace ITS.Allan.ProjectWork.Models.Entities
         [Required(ErrorMessage = "Device's type cannot be null")]
         [StringLength(50, ErrorMessage = "Device's type cannot be longer than 50 characters")]
         public string DeviceType { get; set; }
+
+        [StringLength(50, ErrorMessage = "Device's name cannot be longer than 50 characters")]
+        public string DeviceName { get; set; }
     }
 }

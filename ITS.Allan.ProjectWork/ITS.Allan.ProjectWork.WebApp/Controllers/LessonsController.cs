@@ -30,6 +30,16 @@ namespace ITS.Allan.ProjectWork.WebApp.Controllers
             return await _context.Lessons.ToListAsync();
         }
 
+        // GET: api/Lessons/jobs
+        [HttpGet("jobs")]
+        public async Task<ActionResult<IEnumerable<Lesson>>> GetLessonsJob()
+        {
+            var date = DateTime.Now;
+            return await _context.Lessons
+                .Where(l => l.StartTime.Year == date.Year && l.StartTime.Month == date.Month && l.StartTime.Day == date.Day && l.StartTime.Hour == date.Hour && l.StartTime.Minute == date.Minute)
+                .OrderBy(l => l)
+                .ToListAsync();
+        }
         // GET: api/Lessons/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Lesson>> GetLesson(int id)

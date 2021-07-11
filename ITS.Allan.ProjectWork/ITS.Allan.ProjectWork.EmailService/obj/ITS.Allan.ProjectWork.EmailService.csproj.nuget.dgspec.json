@@ -1,0 +1,294 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\Luca\\Documents\\GitHub\\ProjectWork-SecondoAnno\\ITS.Allan.ProjectWork\\ITS.Allan.ProjectWork.EmailService\\ITS.Allan.ProjectWork.EmailService.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\Luca\\Documents\\GitHub\\ProjectWork-SecondoAnno\\ITS.Allan.ProjectWork\\ITS.Allan.ProjectWork.Data\\ITS.Allan.ProjectWork.Data.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Luca\\Documents\\GitHub\\ProjectWork-SecondoAnno\\ITS.Allan.ProjectWork\\ITS.Allan.ProjectWork.Data\\ITS.Allan.ProjectWork.Data.csproj",
+        "projectName": "ITS.Allan.ProjectWork.Data",
+        "projectPath": "C:\\Users\\Luca\\Documents\\GitHub\\ProjectWork-SecondoAnno\\ITS.Allan.ProjectWork\\ITS.Allan.ProjectWork.Data\\ITS.Allan.ProjectWork.Data.csproj",
+        "packagesPath": "C:\\Users\\Luca\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Luca\\Documents\\GitHub\\ProjectWork-SecondoAnno\\ITS.Allan.ProjectWork\\ITS.Allan.ProjectWork.Data\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Luca\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "C:\\Users\\Luca\\Documents\\GitHub\\ProjectWork-SecondoAnno\\ITS.Allan.ProjectWork\\ITS.Allan.ProjectWork.Models\\ITS.Allan.ProjectWork.Models.csproj": {
+                "projectPath": "C:\\Users\\Luca\\Documents\\GitHub\\ProjectWork-SecondoAnno\\ITS.Allan.ProjectWork\\ITS.Allan.ProjectWork.Models\\ITS.Allan.ProjectWork.Models.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "Azure.Messaging.ServiceBus": {
+              "target": "Package",
+              "version": "[7.2.1, )"
+            },
+            "Microsoft.Azure.Devices": {
+              "target": "Package",
+              "version": "[1.34.0, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.6, )"
+            },
+            "Microsoft.Extensions.Configuration": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.203\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\Luca\\Documents\\GitHub\\ProjectWork-SecondoAnno\\ITS.Allan.ProjectWork\\ITS.Allan.ProjectWork.EmailService\\ITS.Allan.ProjectWork.EmailService.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Luca\\Documents\\GitHub\\ProjectWork-SecondoAnno\\ITS.Allan.ProjectWork\\ITS.Allan.ProjectWork.EmailService\\ITS.Allan.ProjectWork.EmailService.csproj",
+        "projectName": "ITS.Allan.ProjectWork.EmailService",
+        "projectPath": "C:\\Users\\Luca\\Documents\\GitHub\\ProjectWork-SecondoAnno\\ITS.Allan.ProjectWork\\ITS.Allan.ProjectWork.EmailService\\ITS.Allan.ProjectWork.EmailService.csproj",
+        "packagesPath": "C:\\Users\\Luca\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Luca\\Documents\\GitHub\\ProjectWork-SecondoAnno\\ITS.Allan.ProjectWork\\ITS.Allan.ProjectWork.EmailService\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Luca\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "C:\\Users\\Luca\\Documents\\GitHub\\ProjectWork-SecondoAnno\\ITS.Allan.ProjectWork\\ITS.Allan.ProjectWork.Data\\ITS.Allan.ProjectWork.Data.csproj": {
+                "projectPath": "C:\\Users\\Luca\\Documents\\GitHub\\ProjectWork-SecondoAnno\\ITS.Allan.ProjectWork\\ITS.Allan.ProjectWork.Data\\ITS.Allan.ProjectWork.Data.csproj"
+              },
+              "C:\\Users\\Luca\\Documents\\GitHub\\ProjectWork-SecondoAnno\\ITS.Allan.ProjectWork\\ITS.Allan.ProjectWork.Infrastructure\\ITS.Allan.ProjectWork.Infrastructure.csproj": {
+                "projectPath": "C:\\Users\\Luca\\Documents\\GitHub\\ProjectWork-SecondoAnno\\ITS.Allan.ProjectWork\\ITS.Allan.ProjectWork.Infrastructure\\ITS.Allan.ProjectWork.Infrastructure.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[5.0.7, )"
+            },
+            "Microsoft.Extensions.Hosting": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.203\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\Luca\\Documents\\GitHub\\ProjectWork-SecondoAnno\\ITS.Allan.ProjectWork\\ITS.Allan.ProjectWork.Infrastructure\\ITS.Allan.ProjectWork.Infrastructure.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Luca\\Documents\\GitHub\\ProjectWork-SecondoAnno\\ITS.Allan.ProjectWork\\ITS.Allan.ProjectWork.Infrastructure\\ITS.Allan.ProjectWork.Infrastructure.csproj",
+        "projectName": "ITS.Allan.ProjectWork.Infrastructure",
+        "projectPath": "C:\\Users\\Luca\\Documents\\GitHub\\ProjectWork-SecondoAnno\\ITS.Allan.ProjectWork\\ITS.Allan.ProjectWork.Infrastructure\\ITS.Allan.ProjectWork.Infrastructure.csproj",
+        "packagesPath": "C:\\Users\\Luca\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Luca\\Documents\\GitHub\\ProjectWork-SecondoAnno\\ITS.Allan.ProjectWork\\ITS.Allan.ProjectWork.Infrastructure\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Luca\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "C:\\Users\\Luca\\Documents\\GitHub\\ProjectWork-SecondoAnno\\ITS.Allan.ProjectWork\\ITS.Allan.ProjectWork.Data\\ITS.Allan.ProjectWork.Data.csproj": {
+                "projectPath": "C:\\Users\\Luca\\Documents\\GitHub\\ProjectWork-SecondoAnno\\ITS.Allan.ProjectWork\\ITS.Allan.ProjectWork.Data\\ITS.Allan.ProjectWork.Data.csproj"
+              },
+              "C:\\Users\\Luca\\Documents\\GitHub\\ProjectWork-SecondoAnno\\ITS.Allan.ProjectWork\\ITS.Allan.ProjectWork.Models\\ITS.Allan.ProjectWork.Models.csproj": {
+                "projectPath": "C:\\Users\\Luca\\Documents\\GitHub\\ProjectWork-SecondoAnno\\ITS.Allan.ProjectWork\\ITS.Allan.ProjectWork.Models\\ITS.Allan.ProjectWork.Models.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "Azure.Messaging.ServiceBus": {
+              "target": "Package",
+              "version": "[7.2.1, )"
+            },
+            "MailKit": {
+              "target": "Package",
+              "version": "[2.13.0, )"
+            },
+            "Microsoft.Extensions.Configuration": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+            "MimeKit": {
+              "target": "Package",
+              "version": "[2.13.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.203\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\Luca\\Documents\\GitHub\\ProjectWork-SecondoAnno\\ITS.Allan.ProjectWork\\ITS.Allan.ProjectWork.Models\\ITS.Allan.ProjectWork.Models.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Luca\\Documents\\GitHub\\ProjectWork-SecondoAnno\\ITS.Allan.ProjectWork\\ITS.Allan.ProjectWork.Models\\ITS.Allan.ProjectWork.Models.csproj",
+        "projectName": "ITS.Allan.ProjectWork.Models",
+        "projectPath": "C:\\Users\\Luca\\Documents\\GitHub\\ProjectWork-SecondoAnno\\ITS.Allan.ProjectWork\\ITS.Allan.ProjectWork.Models\\ITS.Allan.ProjectWork.Models.csproj",
+        "packagesPath": "C:\\Users\\Luca\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Luca\\Documents\\GitHub\\ProjectWork-SecondoAnno\\ITS.Allan.ProjectWork\\ITS.Allan.ProjectWork.Models\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Luca\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "System.ComponentModel.Annotations": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.203\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

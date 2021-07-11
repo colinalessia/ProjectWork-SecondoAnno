@@ -1,0 +1,17 @@
+C:\Users\Luca\Documents\GitHub\ProjectWork-SecondoAnno\ITS.Allan.ProjectWork\ITS.Allan.ProjectWork.Infrastructure\bin\Debug\net5.0\ITS.Allan.ProjectWork.Infrastructure.deps.json
+C:\Users\Luca\Documents\GitHub\ProjectWork-SecondoAnno\ITS.Allan.ProjectWork\ITS.Allan.ProjectWork.Infrastructure\bin\Debug\net5.0\ITS.Allan.ProjectWork.Infrastructure.dll
+C:\Users\Luca\Documents\GitHub\ProjectWork-SecondoAnno\ITS.Allan.ProjectWork\ITS.Allan.ProjectWork.Infrastructure\bin\Debug\net5.0\ref\ITS.Allan.ProjectWork.Infrastructure.dll
+C:\Users\Luca\Documents\GitHub\ProjectWork-SecondoAnno\ITS.Allan.ProjectWork\ITS.Allan.ProjectWork.Infrastructure\bin\Debug\net5.0\ITS.Allan.ProjectWork.Infrastructure.pdb
+C:\Users\Luca\Documents\GitHub\ProjectWork-SecondoAnno\ITS.Allan.ProjectWork\ITS.Allan.ProjectWork.Infrastructure\bin\Debug\net5.0\ITS.Allan.ProjectWork.Data.dll
+C:\Users\Luca\Documents\GitHub\ProjectWork-SecondoAnno\ITS.Allan.ProjectWork\ITS.Allan.ProjectWork.Infrastructure\bin\Debug\net5.0\ITS.Allan.ProjectWork.Models.dll
+C:\Users\Luca\Documents\GitHub\ProjectWork-SecondoAnno\ITS.Allan.ProjectWork\ITS.Allan.ProjectWork.Infrastructure\bin\Debug\net5.0\ITS.Allan.ProjectWork.Data.pdb
+C:\Users\Luca\Documents\GitHub\ProjectWork-SecondoAnno\ITS.Allan.ProjectWork\ITS.Allan.ProjectWork.Infrastructure\bin\Debug\net5.0\ITS.Allan.ProjectWork.Models.pdb
+C:\Users\Luca\Documents\GitHub\ProjectWork-SecondoAnno\ITS.Allan.ProjectWork\ITS.Allan.ProjectWork.Infrastructure\obj\Debug\net5.0\ITS.Allan.ProjectWork.Infrastructure.csprojAssemblyReference.cache
+C:\Users\Luca\Documents\GitHub\ProjectWork-SecondoAnno\ITS.Allan.ProjectWork\ITS.Allan.ProjectWork.Infrastructure\obj\Debug\net5.0\ITS.Allan.ProjectWork.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Luca\Documents\GitHub\ProjectWork-SecondoAnno\ITS.Allan.ProjectWork\ITS.Allan.ProjectWork.Infrastructure\obj\Debug\net5.0\ITS.Allan.ProjectWork.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\Luca\Documents\GitHub\ProjectWork-SecondoAnno\ITS.Allan.ProjectWork\ITS.Allan.ProjectWork.Infrastructure\obj\Debug\net5.0\ITS.Allan.ProjectWork.Infrastructure.AssemblyInfo.cs
+C:\Users\Luca\Documents\GitHub\ProjectWork-SecondoAnno\ITS.Allan.ProjectWork\ITS.Allan.ProjectWork.Infrastructure\obj\Debug\net5.0\ITS.Allan.ProjectWork.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\Luca\Documents\GitHub\ProjectWork-SecondoAnno\ITS.Allan.ProjectWork\ITS.Allan.ProjectWork.Infrastructure\obj\Debug\net5.0\ITS.Allan.ProjectWork.Infrastructure.csproj.CopyComplete
+C:\Users\Luca\Documents\GitHub\ProjectWork-SecondoAnno\ITS.Allan.ProjectWork\ITS.Allan.ProjectWork.Infrastructure\obj\Debug\net5.0\ITS.Allan.ProjectWork.Infrastructure.dll
+C:\Users\Luca\Documents\GitHub\ProjectWork-SecondoAnno\ITS.Allan.ProjectWork\ITS.Allan.ProjectWork.Infrastructure\obj\Debug\net5.0\ref\ITS.Allan.ProjectWork.Infrastructure.dll
+C:\Users\Luca\Documents\GitHub\ProjectWork-SecondoAnno\ITS.Allan.ProjectWork\ITS.Allan.ProjectWork.Infrastructure\obj\Debug\net5.0\ITS.Allan.ProjectWork.Infrastructure.pdb

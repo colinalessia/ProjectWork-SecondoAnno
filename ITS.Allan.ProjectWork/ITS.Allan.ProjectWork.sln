@@ -7,7 +7,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ITS.Allan.ProjectWork.Model
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ITS.Allan.ProjectWork.Data", "ITS.Allan.ProjectWork.Data\ITS.Allan.ProjectWork.Data.csproj", "{441B553F-CBD4-413E-89EE-A20048BB6B9E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ITS.Allan.ProjectWork.WebApp", "ITS.Allan.ProjectWork.WebApp\ITS.Allan.ProjectWork.WebApp.csproj", "{AAD9C647-7591-408F-9363-235265C6563D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ITS.Allan.ProjectWork.WebApp", "ITS.Allan.ProjectWork.WebApp\ITS.Allan.ProjectWork.WebApp.csproj", "{AAD9C647-7591-408F-9363-235265C6563D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ITS.Allan.ProjectWork.Infrastructure", "ITS.Allan.ProjectWork.Infrastructure\ITS.Allan.ProjectWork.Infrastructure.csproj", "{6EFFE653-3CFE-4301-AA65-4746BE70AAB0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ITS.Allan.ProjectWork.EmailService", "ITS.Allan.ProjectWork.EmailService\ITS.Allan.ProjectWork.EmailService.csproj", "{194AEBC3-B5C0-40CE-82DF-E3A62093A07A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ITS.Allan.ProjectWork.JobScheduler", "ITS.Allan.ProjectWork.JobScheduler\ITS.Allan.ProjectWork.JobScheduler.csproj", "{4FF05306-B0AF-4498-AC3B-3F36DFDD95DB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +33,18 @@ Global
 		{AAD9C647-7591-408F-9363-235265C6563D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AAD9C647-7591-408F-9363-235265C6563D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AAD9C647-7591-408F-9363-235265C6563D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6EFFE653-3CFE-4301-AA65-4746BE70AAB0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6EFFE653-3CFE-4301-AA65-4746BE70AAB0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6EFFE653-3CFE-4301-AA65-4746BE70AAB0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6EFFE653-3CFE-4301-AA65-4746BE70AAB0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{194AEBC3-B5C0-40CE-82DF-E3A62093A07A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{194AEBC3-B5C0-40CE-82DF-E3A62093A07A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{194AEBC3-B5C0-40CE-82DF-E3A62093A07A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{194AEBC3-B5C0-40CE-82DF-E3A62093A07A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4FF05306-B0AF-4498-AC3B-3F36DFDD95DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4FF05306-B0AF-4498-AC3B-3F36DFDD95DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4FF05306-B0AF-4498-AC3B-3F36DFDD95DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4FF05306-B0AF-4498-AC3B-3F36DFDD95DB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

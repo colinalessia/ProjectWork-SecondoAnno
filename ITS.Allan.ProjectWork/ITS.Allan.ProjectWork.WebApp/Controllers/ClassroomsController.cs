@@ -25,6 +25,7 @@ namespace ITS.Allan.ProjectWork.WebApp.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Classroom>>> GetClassrooms()
         {
+            
             return await _context.Classrooms.ToListAsync();
         }
 

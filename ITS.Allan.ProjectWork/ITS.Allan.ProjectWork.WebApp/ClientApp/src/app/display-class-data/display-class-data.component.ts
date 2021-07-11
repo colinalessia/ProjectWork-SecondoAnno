@@ -118,6 +118,7 @@ export class DisplayClassDataComponent implements OnInit {
 
   public allowMultiple: Boolean = false;
   public showQuickInfo: Boolean = false;
+  public checkColors: string[] = [];
 
   public enablePersistence: Boolean = true;
   constructor(
@@ -147,9 +148,7 @@ export class DisplayClassDataComponent implements OnInit {
             //GET course by id
             this.courseService.get(lesson.idCourse.toString()).subscribe(data => {
               lesson.courseName = data.courseName;
-              this.courseDataSource.push({
-                text: data.courseName, id: data.idCourse, color: this.getRandomColor(), groupId: 0
-              });
+              
               //GET classroom by id
               this.classroomService.get(lesson.idClassroom.toString()).subscribe(data => {
 
@@ -244,6 +243,9 @@ export class DisplayClassDataComponent implements OnInit {
         this.dropDownCourse.push({
           Name: course.courseName, Id: course.idCourse.toString()
         });
+        this.courseDataSource.push({
+          text: course.courseName, id: course.idCourse, color: this.getRandomColor(), groupId: 0
+        });
       }
 
     });
@@ -260,13 +262,17 @@ export class DisplayClassDataComponent implements OnInit {
   }
 
   //renderizza l'appuntamento con il colore appropriato in base al corso
-  oneventRendered(args: EventRenderedArgs): void {
+  /*oneventRendered(args: EventRenderedArgs): void {
+    console.log("entra");
     for (let course of this.courseDataSource) {
-      if (course.text == args.data.Course) {
+      
+      let check = this.checkColors.includes(course.text);
+      if (course.text == args.data.Course && !check) {
+        this.checkColors.push(course.text);
         args.element.style.backgroundColor = course.color;
       }
     }
-  }
+  }*/
   //formattazione delle date negli appuntamenti
   public getTimeString(value: Date): string {
     return this.instance.formatDate(value, { skeleton: 'hm' });

@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk.Worker">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <UserSecretsId>dotnet-ITS.Allan.ProjectWork.EmailService-A4069F6C-12D3-452F-A43E-20C328C9FA9F</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="5.0.7" />
+    <PackageReference Include="Microsoft.Extensions.Hosting" Version="5.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ITS.Allan.ProjectWork.Data\ITS.Allan.ProjectWork.Data.csproj" />
+    <ProjectReference Include="..\ITS.Allan.ProjectWork.Infrastructure\ITS.Allan.ProjectWork.Infrastructure.csproj" />
+  </ItemGroup>
+</Project>
