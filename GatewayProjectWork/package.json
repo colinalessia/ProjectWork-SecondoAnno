@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "@serialport/parser-byte-length": "^9.0.7",
+    "azure-iot-device-mqtt": "^1.15.4",
+    "binary-parser": "^1.9.2",
+    "serialport": "^9.2.0"
+  }
+}
