@@ -20,13 +20,13 @@
              [ngClass]="{ show: isExpanded }">
           <ul class="navbar-nav flex-grow">
             <li class="nav-item" [routerLinkActive]="['link-active']">
-              <a class="nav-link text-dark" [routerLink]="['/display-class-data']">Display class data</a>
+              <a class="nav-link text-dark" [routerLink]="['/student-scheduler']">Student scheduler</a>
             </li>
             <li class="nav-item" [routerLinkActive]="['link-active']">
-              <a class="nav-link text-dark" [routerLink]="['/display-schedule-read-only']">Display schedule</a>
+              <a class="nav-link text-dark" [routerLink]="['/admin-scheduler']">Admin scheduler</a>
             </li>
             <li class="nav-item" [routerLinkActive]="['link-active']">
-              <a class="nav-link text-dark" [routerLink]="['/add-class-data-form']">Add class data form</a>
+              <a class="nav-link text-dark" [routerLink]="['/admin-form']">Admin form</a>
             </li>
             <li class="nav-item" [routerLinkActive]="['link-active']">
               <a class="nav-link text-dark" [routerLink]="" (click)="logout()">Log out</a>

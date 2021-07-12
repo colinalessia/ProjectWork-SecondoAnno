@@ -58,12 +58,6 @@ import { appRoutes } from './app.routes';
     FormsModule,
     ReactiveFormsModule,
     RouterModule.forRoot(appRoutes)
-    /*RouterModule.forRoot([
-      { path: 'login', component: LoginComponent },
-      { path: '', component: DisplayClassDataComponent, pathMatch: 'full' },
-      { path: 'add-class-data-form', component: AddClassDataFormComponent },
-      { path: 'display-schedule-read-only', component: DisplayScheduleReadOnly }
-    ])*/
   ],
   providers: [LessonService, TeacherService, SubjectService, ClassroomService, CourseService, BuildingService, FloorService, UserService, AuthService, AuthGuardService],
   bootstrap: [AppComponent]

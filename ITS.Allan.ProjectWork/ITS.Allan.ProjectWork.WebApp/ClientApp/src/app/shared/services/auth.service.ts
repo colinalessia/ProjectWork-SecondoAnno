@@ -27,6 +27,7 @@ export default class AuthService {
       for (let user of this.users) {
         if (user.userEmail == userEmail && user.userPassword == userPassword) {
           if (user.userRole == "admin") {
+            alert("Admin permissions unlocked")
             this.isloggedIn = true;
             this.userRole = user.userRole;
             return of(this.isloggedIn);

@@ -145,5 +145,7 @@ export class AddClassDataFormComponent implements OnInit {
       (response) => console.log(response),
       (error) => console.log(error)
     )
+    alert("Lesson inserted")
+    this.form.reset();
   }
 }

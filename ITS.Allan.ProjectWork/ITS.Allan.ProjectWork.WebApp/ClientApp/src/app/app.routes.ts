@@ -8,8 +8,8 @@ import { AuthGuardService } from './shared/services/auth-guard.service';
 
 export const appRoutes: Routes = [
   { path: 'login', component: LoginComponent },
-  { path: 'display-schedule-read-only', component: DisplayScheduleReadOnly },
-  { path: 'display-class-data', component: DisplayClassDataComponent, canActivate: [AuthGuardService]},
-  { path: 'add-class-data-form', component: AddClassDataFormComponent, canActivate: [AuthGuardService] },
-  { path: '', redirectTo: 'login', pathMatch: 'full' },
+  { path: 'student-scheduler', component: DisplayScheduleReadOnly },
+  { path: 'admin-scheduler', component: DisplayClassDataComponent, canActivate: [AuthGuardService]},
+  { path: 'admin-form', component: AddClassDataFormComponent, canActivate: [AuthGuardService] },
+  { path: '', redirectTo: 'student-scheduler', pathMatch: 'full' },
 ];

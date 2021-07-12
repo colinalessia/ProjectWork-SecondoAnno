@@ -118,7 +118,6 @@ export class DisplayClassDataComponent implements OnInit {
 
   public allowMultiple: Boolean = false;
   public showQuickInfo: Boolean = false;
-  public checkColors: string[] = [];
 
   public enablePersistence: Boolean = true;
   constructor(
@@ -262,17 +261,15 @@ export class DisplayClassDataComponent implements OnInit {
   }
 
   //renderizza l'appuntamento con il colore appropriato in base al corso
-  /*oneventRendered(args: EventRenderedArgs): void {
-    console.log("entra");
+  oneventRendered(args: EventRenderedArgs): void {
+
     for (let course of this.courseDataSource) {
-      
-      let check = this.checkColors.includes(course.text);
-      if (course.text == args.data.Course && !check) {
-        this.checkColors.push(course.text);
+
+      if (course.text == args.data.Course) {
         args.element.style.backgroundColor = course.color;
       }
     }
-  }*/
+  }
   //formattazione delle date negli appuntamenti
   public getTimeString(value: Date): string {
     return this.instance.formatDate(value, { skeleton: 'hm' });
